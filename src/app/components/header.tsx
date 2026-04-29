@@ -5,7 +5,7 @@ import { NavBar } from "./navbar"
 
 export function Header(){
     return (<div className={`p-2 lg:p-4 w-full bg-red-800/90
-    flex items-center justify-center 
+    flex items-center justify-between
     lg:justify-between sticky top-0 z-50`}>
 <Image src="/logo/viragologo.webp"
 alt="virago logo"
