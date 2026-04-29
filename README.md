@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍷 Virago Spirits — Modern Landing Page
 
-## Getting Started
+A premium, responsive landing page for a craft distillery brand, built with modern web technologies and a strong focus on design, performance, and user experience.
 
-First, run the development server:
+🔗 **Live Site:** https://viragospirits.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Overview
+
+Virago Spirits is a visually rich landing page that showcases a fictional craft distillery. The site highlights brand identity, featured spirits, storytelling, and user engagement through a clean, modern UI.
+
+The goal of this project was to create a **production-ready, high-end marketing website** using Next.js and Tailwind CSS.
+
+---
+
+## 🚀 Features
+
+* ⚡ Fully responsive design (mobile-first)
+* 🎨 Modern UI with gradients, overlays, and typography
+* 🧭 Smooth mobile navigation drawer
+* 🥃 Product showcase with horizontal scroll
+* 🎯 Hero section with layered backgrounds
+* 📱 Optimized for performance and accessibility
+* 🖼️ Image optimization using Next.js `<Image />`
+
+---
+
+## 🛠️ Tech Stack
+
+* **Framework:** Next.js (App Router)
+* **Styling:** Tailwind CSS (v4)
+* **Language:** TypeScript
+* **Icons:** Heroicons
+* **Deployment:** Vercel
+
+---
+
+## 📁 Project Structure
+
+```
+/app
+  /components   → Reusable UI components
+  /ui           → Fonts & shared styles
+  layout.tsx    → Root layout
+  page.tsx      → Homepage
+/public
+  /images       → Assets (bottles, founders, etc.)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧪 Local Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Clone the repo and run locally:
 
-## Learn More
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+cd YOUR_REPO
+pnpm install
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+App will be available at:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+http://localhost:3000
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is deployed on **Vercel** for fast global delivery and seamless CI/CD.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To deploy your own version:
+
+1. Push to GitHub
+2. Import project into Vercel
+3. Deploy instantly
+
+---
+
+## 🎯 Design Highlights
+
+* Clean luxury aesthetic inspired by premium spirit brands
+* Strong typography pairing (serif + sans-serif)
+* Layered hero section with gradient overlays
+* Interactive hover states and micro-animations
+
+---
+
+## 📌 Future Improvements
+
+* Add animations (Framer Motion)
+* Integrate CMS (e.g. Sanity or Contentful)
+* Add e-commerce functionality
+* Improve accessibility (ARIA, contrast tuning)
+
+---
+
+## 👨‍💻 Author
+
+Built by **Timothy Abolaji**
+
+---
+
+## 📄 License
+
+This project is for educational and portfolio purposes.
