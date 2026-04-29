@@ -34,7 +34,7 @@ export function NavBar() {
       <button type="button"
       aria-label="Toggle Nav Menu"
         onClick={handleToggle}
-        className="fixed right-4 z-[110] lg:hidden"
+        className="sticky right-4 top-2 z-[110] lg:hidden"
       >
         {isOpen ? (
           <XMarkIcon className="w-7 h-7 text-white" />
