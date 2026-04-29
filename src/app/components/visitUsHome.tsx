@@ -25,7 +25,7 @@ relative`}>
        alt="picture of our tasting room"
        width={500}
        height={300}
-       className={`w-full h-auto
+       className={`w-full h-auto mt-5
          lg:hidden pb-3 pt-8 m-auto
         shadow-[0px_0px_13px_5px_rgba(0,0,0,0.7)]`} /> 
  
@@ -90,14 +90,14 @@ relative`}>
        width={300}
        height={500}
        className={` lg:hidden pb-3 pt-8 m-auto
-          h-full w-auto
+          h-full w-auto mt-2
         shadow-[0px_0px_13px_5px_rgba(0,0,0,0.7)]`} /> 
          <Image src="/images/tasting-room-5.webp"
        alt="picture of our tasting room"
        width={300}
        height={500}
        className={` lg:hidden pb-3 pt-8 m-auto
-        h-full w-auto
+        h-full w-auto mt-2
         shadow-[0px_0px_13px_5px_rgba(0,0,0,0.7)]`} /> 
          <div className={`mt-10 w-full text-red-800/90 
             flex flex-col lg:justify-evenly lg:flex-row justify-center 
