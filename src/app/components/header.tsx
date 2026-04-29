@@ -13,7 +13,7 @@ width={250}
 height={100}
 className="max-md:w-35" />
 <div className={`${oswald.className} uppercase tracking-widest
- text-[19px] m-auto
+ text-[15px] m-auto
  h-[100%] font-[500]
  text-white gap-4 hidden lg:flex
  justify-center items-center`}>
@@ -56,7 +56,7 @@ ease-linear`}>Contact</Link>
 <Link href=""
 className={`m-auto py-3 px-8 hidden lg:flex
 hover:bg-white hover:text-red-800/90 
-traansition-all
+traansition-all text-[13px]
 duration-500 ease-in-out bg-black text-white
 font-semibold`}>PLAN YOUR VISIT</Link>
 <NavBar />

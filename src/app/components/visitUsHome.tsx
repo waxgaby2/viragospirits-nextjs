@@ -9,27 +9,27 @@ export function VisitUs(){
 return (
 <section className={`w-[95vw] m-auto
 shadow-[0_0_15px_8px_rgba(0,0,0,0.5)]
-py-7 
+py-7 text-sm lg:text-md
 rounded-3xl
 bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950
 relative`}>
         <div className={`w-full flex justify-between p-3`}>
         <div className={`lg:w-[50%]  py-5 px-3
 
-    lg:pl-20 lg:py-10`}>
+    lg:pl-20 lg:py-3`}>
 <h2 className="font-bold font-serif">VISIT US</h2>
 
-<h3 className="font-serif text-4xl mt-10 lg:text-6xl">Come For The Mead.</h3>
-  <h3 className="font-serif text-4xl lg:text-6xl">Stay For The Experience.</h3>
+<h3 className="font-serif text-4xl mt-10 ">Come For The Mead.</h3>
+  <h3 className="font-serif text-4xl">Stay For The Experience.</h3>
   <Image src="/images/tastingroom.webp"
        alt="picture of our tasting room"
        width={500}
        height={300}
-       className={`
+       className={`w-full h-auto
          lg:hidden pb-3 pt-8 m-auto
         shadow-[0px_0px_13px_5px_rgba(0,0,0,0.7)]`} /> 
  
- <p className={`lg:text-lg pt-10 lg:pr-10 ${inter.className}`}>
+ <p className={`lg:text-md pt-10 lg:pr-10 ${inter.className}`}>
    Step into our Tasting Room and discover a space that
     blends modern craft with timeless character. Our
      cocktail bar showcases seasonally inspired creations
@@ -90,14 +90,14 @@ relative`}>
        width={300}
        height={500}
        className={` lg:hidden pb-3 pt-8 m-auto
-          h-auto w-full
+          h-full w-auto
         shadow-[0px_0px_13px_5px_rgba(0,0,0,0.7)]`} /> 
          <Image src="/images/tasting-room-5.webp"
        alt="picture of our tasting room"
        width={300}
        height={500}
        className={` lg:hidden pb-3 pt-8 m-auto
-        h-auto w-full
+        h-full w-auto
         shadow-[0px_0px_13px_5px_rgba(0,0,0,0.7)]`} /> 
          <div className={`mt-10 w-full text-red-800/90 
             flex flex-col lg:justify-evenly lg:flex-row justify-center 

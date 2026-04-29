@@ -12,13 +12,13 @@ export function Story(){
     justify-center min-h-screen 
     [clip-path:polygon(0_0,100%_0,100%_90%,0_100%)]`}>
 <div className="lg:w-[40%]">
-    <h2 className="text-4xl font-serif lg:text-6xl">WHO WE ARE</h2>
+    <h2 className="text-4xl font-serif lg:text-5xl">WHO WE ARE</h2>
     <Image src="/images/founders.webp"
     alt="founders picture"
     width={350}
     height={200}
     className="lg:hidden pt-10" />
-    <p className={`${workSans.className} text-sm leading-loose mt-5 lg:text-lg`}>Virago Spirits is all about character.
+    <p className={`${workSans.className} text-sm leading-loose mt-5 lg:text-md`}>Virago Spirits is all about character.
          Inspired by the Virago, a heroic woman of great
           strength, courage, determination, and vision, 
           we work to infuse those very characteristics - 
