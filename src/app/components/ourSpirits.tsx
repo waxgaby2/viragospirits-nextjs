@@ -86,12 +86,11 @@ overflow-x-auto scroll-smooth ${inter.className}`}>
 </div>
 <div className={`flex justify-center my-5`}>
   <Link href=""
- className={`py-6 px-10 border
-    bg-red-800/90  w-50 text-sm
+ className={`py-5 px-8 border
+    bg-red-800/90  w-60 text-sm
   border-red-800/90 text-white
   hover:bg-white hover:text-red-800/90 
          md:w-60 text-center
-    font-semibold 
             shadow-[0_0_15px_2px_rgba(0,0,0,0.5)]
         transition-all duration-300 ease
         mt-10 md:mt-0`}>VIEW ALL SPIRITS</Link>
