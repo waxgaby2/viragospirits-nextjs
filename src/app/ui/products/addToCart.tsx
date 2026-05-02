@@ -13,7 +13,11 @@ setPrice(prev => product.price * number)
 function handleAdd(){
 
 const newProduct={product,price,number}
-const products = JSON.parse(localStorage.getItem("products")) || [];
+const fetchProducts = localStorage.getItem("products") || null;
+if(fetchProducts===null){
+  return;
+}
+const products=JSON.parse(fetchProducts);
 const productExist=products.some((p:any)=>product.id===p.product.id);
 if(productExist){
 const productFind=products.find((p:any)=> product.id===p.product.id);
