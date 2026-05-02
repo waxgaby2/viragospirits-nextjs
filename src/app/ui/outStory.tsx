@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import { workSans } from "../ui/fonts";
+import { workSans } from "./fonts";
 import Link from "next/link";
 
 
@@ -28,7 +28,7 @@ export function Story(){
             Virago Spirits promotes strength of 
              and honors those who personify the Spirit
               of Virago.</p>
-    <Link href=""
+    <Link href="/"
     className={`inline-block lg:font-bold bg-red-800/90
     lg:py-6 lg:px-10 py-4 px-8 mt-7
     hover:bg-black/80`}>LEARN OUR STORY</Link>

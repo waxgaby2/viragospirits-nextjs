@@ -2,7 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
-import { inter } from "../ui/fonts";
+import { inter } from "./fonts";
 
 
 export function OurSpirits(){
@@ -42,7 +42,7 @@ overflow-x-auto scroll-smooth ${inter.className}`}>
         balanced with just the right amount of ester-y 
         funk...
     </p>
-   <Link className="group flex items-center mt-4 hover:text-red-800/90" href="">
+   <Link href="/" className="group flex items-center mt-4 hover:text-red-800/90" href="">
   LEARN MORE
   <ArrowLongRightIcon className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-2" />
 </Link>
@@ -60,7 +60,7 @@ overflow-x-auto scroll-smooth ${inter.className}`}>
         Lush aromas of apricot preserve, warm toffee, and honeysuckle harmiously
          blend with flavors of aged cognac...
     </p>
-   <Link className="group flex items-center mt-4 hover:text-red-800/90" href="">
+   <Link href="/" className="group flex items-center mt-4 hover:text-red-800/90" href="">
   LEARN MORE
   <ArrowLongRightIcon className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-2" />
 </Link>
@@ -78,14 +78,14 @@ overflow-x-auto scroll-smooth ${inter.className}`}>
         Carefully distilled from a unique blend of botanicals,
         including juniper, coriander, Szechuan peppercorn...
     </p>
-    <Link className="group flex items-center mt-4 hover:text-red-800/90" href="">
+    <Link href="/" className="group flex items-center mt-4 hover:text-red-800/90" href="">
   LEARN MORE
   <ArrowLongRightIcon className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-2" />
 </Link>
     </div>   
 </div>
 <div className={`flex justify-center my-5`}>
-  <Link href=""
+  <Link href="/"
  className={`py-5 px-8 border
     bg-red-800/90  w-60 text-sm
   border-red-800/90 text-white

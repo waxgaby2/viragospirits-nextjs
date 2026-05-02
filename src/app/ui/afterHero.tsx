@@ -1,8 +1,8 @@
 import { BeakerIcon } from '@heroicons/react/24/outline';
 import { ArchiveBoxIcon } from '@heroicons/react/24/outline';
 import { UserGroupIcon } from '@heroicons/react/24/outline';
-import { inter } from '../ui/fonts';
-import { workSans } from '../ui/fonts';
+import { inter } from './fonts';
+import { workSans } from './fonts';
 
 export function AfterHero(){
     return (

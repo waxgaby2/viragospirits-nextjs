@@ -62,7 +62,7 @@ export function NavBar() {
         {links.map((link, i) => (
           <Link
             key={link}
-            href=""
+            href="/"
             onClick={() => setOpen(false)}
             className={`text-lg tracking-widest uppercase
             border-b border-white/10 pb-3
@@ -78,7 +78,7 @@ export function NavBar() {
         ))}
 
         <Link
-          href=""
+          href="/"
           onClick={() => setOpen(false)}
           className="mt-6 text-center py-4 bg-red-800/90 hover:bg-red-800 transition rounded-md font-semibold"
         >

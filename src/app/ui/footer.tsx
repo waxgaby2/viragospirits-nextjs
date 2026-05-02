@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
-import { bodoni } from "../ui/fonts"
-import { workSans } from "../ui/fonts"
+import { bodoni } from "./fonts"
+import { workSans } from "./fonts"
 
 export function Footer(){
     return (<footer className={`w-full flex items-center 
@@ -24,26 +24,26 @@ mx-auto lg:mx-0
 </div>
 <div className="flex flex-row justify-between md:justify-evenly w-full">
 <div className="flex flex-col mt-5 gap-1 lg:gap-2 ">
-<Link href="" 
+<Link href="/" 
 className="hover:text-red-500 transition-colors duration-300">About us</Link>
 
-<Link href=""
+<Link href="/"
 className="hover:text-red-500 transition-colors duration-300">Shop</Link>
 
-<Link href="">Where to buy</Link>
+<Link href="/">Where to buy</Link>
 </div>
 <div className="flex flex-col lg:mt-5 gap-1 lg:gap-2 ">
-<Link href=""
+<Link href="/"
 className="hover:text-red-500 transition-colors duration-300">
 Tasting Room</Link>
 
-<Link href="" 
+<Link href="/" 
 className="hover:text-red-500 transition-colors duration-300">Events</Link>
 
-<Link href=""
+<Link href="/"
 className="hover:text-red-500 transition-colors duration-300">Spirits</Link>
 
-<Link href=""
+<Link href="/"
 className="hover:text-red-500 transition-colors duration-300">Contact</Link>
 </div>
 </div>

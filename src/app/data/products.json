@@ -1,0 +1,197 @@
+[
+  {
+    "id": "four-port-rum",
+    "name": "Virago Four-Port Rum",
+    "slug": "four-port-rum",
+    "price": 36.99,
+    "currency": "USD",
+    "category": "rum",
+    "image": "/images/products/four-port-rum.webp",
+    "images": [
+      "/images/products/four-port-rum.webp"
+    ],
+    "shortDescription": "Rich · Aged · Complex",
+    "description": "A signature blend of rums aged and finished for depth, balance, and character.",
+    "tags": ["aged", "complex", "signature"],
+    "tastingNotes": ["Vanilla", "Fig", "Caramel", "Smoke"],
+    "specs": {
+      "type": "Rum",
+      "abv": "—",
+      "volume": "750ml"
+    },
+    "inStock": true
+  },
+  {
+    "id": "ruby-port-cask-rum",
+    "name": "Virago Ruby Port Cask Finished Rum",
+    "slug": "ruby-port-cask-rum",
+    "price": 42.99,
+    "currency": "USD",
+    "category": "rum",
+    "image": "/images/products/ruby-port-rum.webp",
+    "images": ["/images/products/ruby-port-rum.webp"],
+    "shortDescription": "Fruity · Deep · Smooth",
+    "description": "Finished in ruby port casks, delivering rich fruit-forward complexity.",
+    "tags": ["cask-finished", "fruity"],
+    "tastingNotes": ["Dark Fruit", "Plum", "Oak"],
+    "specs": {
+      "type": "Rum",
+      "volume": "750ml"
+    },
+    "inStock": true
+  },
+  {
+    "id": "cognac-cask-rum",
+    "name": "Virago Cognac Cask Finished Rum",
+    "slug": "cognac-cask-rum",
+    "price": 49.99,
+    "currency": "USD",
+    "category": "rum",
+    "image": "/images/products/cognac-rum.webp",
+    "images": ["/images/products/cognac-rum.webp"],
+    "shortDescription": "Elegant · Oaky · Refined",
+    "description": "A premium rum finished in cognac casks for a smooth and elegant profile.",
+    "tags": ["premium", "cask-finished"],
+    "tastingNotes": ["Oak", "Spice", "Vanilla"],
+    "specs": {
+      "type": "Rum",
+      "volume": "750ml"
+    },
+    "inStock": true
+  },
+  {
+    "id": "premium-white-rum",
+    "name": "Virago Premium White Rum",
+    "slug": "premium-white-rum",
+    "price": 21.99,
+    "currency": "USD",
+    "category": "rum",
+    "image": "/images/products/white-rum.webp",
+    "images": ["/images/products/white-rum.webp"],
+    "shortDescription": "Clean · Crisp · Light",
+    "description": "A clean and versatile white rum ideal for cocktails.",
+    "tags": ["light", "mixing"],
+    "tastingNotes": ["Crisp", "Clean"],
+    "specs": {
+      "type": "Rum",
+      "volume": "750ml"
+    },
+    "inStock": true
+  },
+  {
+    "id": "rum-151",
+    "name": "Virago Rum 151",
+    "slug": "rum-151",
+    "price": 36.99,
+    "currency": "USD",
+    "category": "rum",
+    "image": "/images/products/rum-151.webp",
+    "images": ["/images/products/rum-151.webp"],
+    "shortDescription": "Strong · Bold · High Proof",
+    "description": "A high-proof rum designed for bold cocktails and intensity.",
+    "tags": ["high-proof"],
+    "tastingNotes": ["Spice", "Heat"],
+    "specs": {
+      "type": "Rum",
+      "proof": "151",
+      "volume": "750ml"
+    },
+    "inStock": true
+  },
+  {
+    "id": "modern-gin-oolong",
+    "name": "Virago Modern Gin with Oolong Tea",
+    "slug": "modern-gin-oolong",
+    "price": 37.99,
+    "currency": "USD",
+    "category": "gin",
+    "image": "/images/products/oolong-gin.webp",
+    "images": ["/images/products/oolong-gin.webp"],
+    "shortDescription": "Herbal · Smooth · Unique",
+    "description": "A modern gin infused with oolong tea for a refined botanical profile.",
+    "tags": ["botanical", "tea-infused"],
+    "tastingNotes": ["Tea", "Herbal", "Smooth"],
+    "specs": {
+      "type": "Gin",
+      "volume": "750ml"
+    },
+    "inStock": true
+  },
+  
+  {
+    "id": "coffee-liqueur",
+    "name": "Virago Coffee Liqueur",
+    "slug": "coffee-liqueur",
+    "price": 27.99,
+    "currency": "USD",
+    "category": "liqueur",
+    "image": "/images/products/coffee.webp",
+    "images": ["/images/products/coffee.webp"],
+    "shortDescription": "Rich · Dark · Sweet",
+    "description": "A rich coffee liqueur with deep roasted flavor.",
+    "tags": ["coffee"],
+    "tastingNotes": ["Coffee", "Chocolate"],
+    "specs": {
+      "type": "Liqueur",
+      "volume": "750ml"
+    },
+    "inStock": false
+  },
+  {
+    "id": "karibu-chocolate",
+    "name": "Virago Karibu Chocolate Liqueur",
+    "slug": "karibu-chocolate",
+    "price": 27.99,
+    "currency": "USD",
+    "category": "liqueur",
+    "image": "/images/products/chocolate.webp",
+    "images": ["/images/products/chocolate.webp"],
+    "shortDescription": "Chocolate · Smooth · Sweet",
+    "description": "A smooth chocolate liqueur crafted in small batches.",
+    "tags": ["chocolate"],
+    "tastingNotes": ["Chocolate", "Creamy"],
+    "specs": {
+      "type": "Liqueur",
+      "volume": "750ml"
+    },
+    "inStock": false
+  },
+  {
+    "id": "lilith-cranberry",
+    "name": "Virago Lilith Cranberry Liqueur",
+    "slug": "lilith-cranberry",
+    "price": 27.99,
+    "currency": "USD",
+    "category": "liqueur",
+    "image": "/images/products/cranberry.webp",
+    "images": ["/images/products/cranberry.webp"],
+    "shortDescription": "Tart · Fruity · Bright",
+    "description": "A cranberry-forward liqueur with a vibrant tart finish.",
+    "tags": ["fruit"],
+    "tastingNotes": ["Cranberry", "Tart"],
+    "specs": {
+      "type": "Liqueur",
+      "volume": "750ml"
+    },
+    "inStock": false
+  },
+  {
+    "id": "hibiscus-gin",
+    "name": "Virago Kali Hibiscus Gin",
+    "slug": "hibiscus-gin",
+    "price": 42.99,
+    "currency": "USD",
+    "category": "gin",
+    "image": "/images/products/habiscus-gin.webp",
+    "images": ["/images/products/hibiscus-gin.webp"],
+    "shortDescription": "Floral · Bright · Vibrant",
+    "description": "A floral gin infused with hibiscus for a bold and colorful experience.",
+    "tags": ["floral"],
+    "tastingNotes": ["Hibiscus", "Floral", "Bright"],
+    "specs": {
+      "type": "Gin",
+      "volume": "750ml"
+    },
+    "inStock": true
+  }
+]

@@ -1,6 +1,6 @@
 import Image from "next/image"
-import { inter } from "../ui/fonts"
-import { oswald } from "../ui/fonts"
+import { inter } from "./fonts"
+import { oswald } from "./fonts"
 import { MapPinIcon } from '@heroicons/react/24/outline';
 import { CalendarDaysIcon } from '@heroicons/react/24/outline';
 
