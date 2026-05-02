@@ -1,3 +1,4 @@
+import Link from "next/link";
 type Product = {
   id: number;
   name: string;
@@ -6,11 +7,14 @@ type Product = {
 };
 
 export function ProductCard({ product }: { product: Product }) {
+
+
   return (
-    <div className={` mt-5 rounded-2xl 
+    <div className={` m-2 rounded-2xl 
         shadow-[0_0_8px_7px_rgba(0,0,0,0.1)]
+       text-white
      overflow-hidden hover:shadow-lg transition
-     bg-gray-300 p-8`}>
+     bg-black/80 p-5`}>
 
       <div className="w-full h-50">
         <img
@@ -23,22 +27,25 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
 
       <div className="p-4 space-y-2">
-        <h3 className="text-lg font-semibold text-gray-800">
+        <h3 className="text-lg font-semibold  ">
           {product.name}
         </h3>
 
-        <p className="text-gray-500 text-sm">
+        <p className=" text-sm">
           Premium quality product
         </p>
 
         <div className="flex items-center justify-between">
-          <span className="text-black font-bold text-lg">
+          <span className=" font-bold text-lg">
             ₦{product.price}
           </span>
 
-          <button className="bg-black text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-800 transition">
+          <Link href="/" className={`inline-block bg-white text-gray-900 px-4 
+          py-2 rounded-lg active:scale-90
+          ease
+          text-sm hover:bg-gray-300 transition`}>
             Add to cart
-          </button>
+          </Link>
         </div>
       </div>
     </div>

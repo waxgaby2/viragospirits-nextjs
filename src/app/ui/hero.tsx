@@ -34,7 +34,7 @@ export function Hero() {
            <div className={`flex flex-col
            md:flex-row md:gap-7`}><Link href="/" className={`py-5 px-8
             border max-md:shadow-[inset_0px_0px_9px_3px_rgba(255,255,255,0.3)]
-        md:border-white border-white/60
+        md:border-white border-white/60 inline-block
             md:bg-white md:text-black w-50 text-sm
          md:w-55 text-center hover:text-white
         hover:bg-black/10 font-semibold
@@ -47,7 +47,7 @@ export function Hero() {
      max-md:shadow-[inset_0px_0px_9px_3px_rgba(255,255,255,0.3)]
         border-white/60 hover:text-red-600/90
         lg:border-red-600/90  md:w-55 text-center
-        hover:bg-black/10 font-semibold
+        hover:bg-black/10 font-semibold inline-block
          active:scale-90 
         transition-all duration-300 ease
         mt-7 md:mt-0 active:bg-black/10
@@ -100,9 +100,9 @@ export function ProductsHero() {
         border-white/60 hover:text-red-600/90
         lg:border-red-600/90  md:w-55 text-center
         hover:bg-black/10 font-semibold
-       
+       inline-block
         transition-all duration-300 ease
-       
+       active:scale-90
         mt-7 md:mt-0 active:bg-black/10
         active:text-red-600/90`}>SHOP ALL</Link>
          
