@@ -42,7 +42,7 @@ overflow-x-auto scroll-smooth ${inter.className}`}>
         balanced with just the right amount of ester-y 
         funk...
     </p>
-   <Link href="/" className="group flex items-center mt-4 hover:text-red-800/90" href="">
+   <Link href="/" className="group flex items-center mt-4 hover:text-red-800/90">
   LEARN MORE
   <ArrowLongRightIcon className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-2" />
 </Link>
@@ -60,7 +60,7 @@ overflow-x-auto scroll-smooth ${inter.className}`}>
         Lush aromas of apricot preserve, warm toffee, and honeysuckle harmiously
          blend with flavors of aged cognac...
     </p>
-   <Link href="/" className="group flex items-center mt-4 hover:text-red-800/90" href="">
+   <Link href="/" className="group flex items-center mt-4 hover:text-red-800/90">
   LEARN MORE
   <ArrowLongRightIcon className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-2" />
 </Link>
@@ -78,7 +78,7 @@ overflow-x-auto scroll-smooth ${inter.className}`}>
         Carefully distilled from a unique blend of botanicals,
         including juniper, coriander, Szechuan peppercorn...
     </p>
-    <Link href="/" className="group flex items-center mt-4 hover:text-red-800/90" href="">
+    <Link href="/" className="group flex items-center mt-4 hover:text-red-800/90">
   LEARN MORE
   <ArrowLongRightIcon className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-2" />
 </Link>
