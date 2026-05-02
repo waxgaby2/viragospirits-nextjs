@@ -84,7 +84,7 @@ export function ProductsHero() {
           font-thin md:text-6xl flex
           flex-col text-center tracking-wide
            text-4xl font-serif`}>
-            CRAFT SPIRITS 
+            Craft Spirits
             <span>Collections</span>
           </h1>
           <p className={` text-gray-300 mb-6

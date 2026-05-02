@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import { inter } from '@/app/ui/fonts';
+import { Footer } from "../ui/footer";
+import { Header } from "../ui/header";
+
+
 
 export const metadata: Metadata = {
   title: "Virago Spririts Products",
@@ -17,8 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
-      <div className="min-h-full bg-white">{children}</div>
+    <>
+           <Header />
+      <div className={`min-h-full bg-red-100/90 ${inter.className}`}>{children}</div>
 
+           <Footer />
+</>
+      
   );
 }
