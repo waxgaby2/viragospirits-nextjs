@@ -34,7 +34,7 @@ export function NavBar() {
       <button type="button"
       aria-label="Toggle Nav Menu"
         onClick={handleToggle}
-        className="sticky right-4 top-2 z-[110] lg:hidden"
+        className="sticky right-4 top-2 z-[110] lg:hidden text-white"
       >
         {isOpen ? (
           <XMarkIcon className="w-7 h-7 text-white" />
@@ -54,7 +54,7 @@ export function NavBar() {
         className={`fixed top-0 h-full w-[65vw] max-w-sm z-[99]
         bg-gradient-to-b from-zinc-900 via-black to-zinc-900
         shadow-[-10px_0_30px_rgba(0,0,0,0.6)]
-        px-6 pt-24 overflow-auto
+        px-6 pt-24 overflow-auto text-white
         flex flex-col gap-4 lg:hidden
         transition-all duration-500 ease-in-out
         ${isOpen ? "right-0" : "right-[-500px]"}`}

@@ -2,12 +2,13 @@ import Image from "next/image"
 import Link from "next/link"
 import { oswald } from "./fonts"
 import { NavBar } from "./navbar"
+import { CartCounter } from "./cartCounter"
 
 export function Header(){
     return (<div className={`p-1 lg:p-4 w-full
          bg-red-800/90
-    flex items-center justify-center 
-    lg:justify-between sticky top-0 z-50`}>
+    flex items-center 
+justify-between sticky top-0 z-50`}>
 <Image src="/logo/viragologo.webp"
 alt="virago logo"
 width={170}
@@ -60,6 +61,11 @@ hover:bg-white hover:text-red-800/90
 traansition-all text-[13px]
 duration-500 ease-in-out bg-black text-white
 font-semibold`}>PLAN YOUR VISIT</Link>
+<div className="flex gap-6">
+<Link href="/cart">
+<CartCounter />
+</Link>
 <NavBar />
+</div>
     </div>)
 }

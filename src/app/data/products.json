@@ -11,7 +11,7 @@
       "/images/products/four-port-rum.webp"
     ],
     "shortDescription": "Rich · Aged · Complex",
-    "description": "A signature blend of rums aged and finished for depth, balance, and character.",
+    "description": "Wonderfully complex & bold, Virago Four-Port Rum opens with notes of vanilla & spice, leading to cascading waves of fig, dried coconut, & crème brûlée, culminating in a pleasantly lingering, smoky finish.",
     "tags": ["aged", "complex", "signature"],
     "tastingNotes": ["Vanilla", "Fig", "Caramel", "Smoke"],
     "specs": {
@@ -31,7 +31,7 @@
     "image": "/images/products/ruby-port-rum.webp",
     "images": ["/images/products/ruby-port-rum.webp"],
     "shortDescription": "Fruity · Deep · Smooth",
-    "description": "Finished in ruby port casks, delivering rich fruit-forward complexity.",
+    "description": "FiniThe first in a series of cask-finished products, this expression of Virago offers an intriguingly delicious re-interpretation of our flagship Four-Port Rum. Having spent months in freshly-emptied casks of ruby port from Portugal’s Douro Valley, this spirit exudes an earthy depth, featuring layered notes of campfire, brown sugar, black cherry, pipe tobacco and leather with a finishing hint of candied almond. ",
     "tags": ["cask-finished", "fruity"],
     "tastingNotes": ["Dark Fruit", "Plum", "Oak"],
     "specs": {
@@ -50,7 +50,7 @@
     "image": "/images/products/cognac-rum.webp",
     "images": ["/images/products/cognac-rum.webp"],
     "shortDescription": "Elegant · Oaky · Refined",
-    "description": "A premium rum finished in cognac casks for a smooth and elegant profile.",
+    "description": "Rested for 6 years in 30-year-old Grande Champagne cognac casks, this spirit - the third release in our series of cask-finished rums - is an elegant sipper the color of old gold. Lush aromas of apricot preserve, warm toffee, and honeysuckle harmoniously blend wit h flavors of aged cognac, dark cocoa, and lightly toasted oak to create an extraordinary spirit with a creamy mouthfeel and a long, clean finish.",
     "tags": ["premium", "cask-finished"],
     "tastingNotes": ["Oak", "Spice", "Vanilla"],
     "specs": {
@@ -69,7 +69,7 @@
     "image": "/images/products/white-rum.webp",
     "images": ["/images/products/white-rum.webp"],
     "shortDescription": "Clean · Crisp · Light",
-    "description": "A clean and versatile white rum ideal for cocktails.",
+    "description": "Lush notes of honeydew and ripened pear perfectly balanced with just the right amount of ester-y funk make Virago 'Premium White Rum' ideal for elevating any cocktail, or for sipping on its own. Deliciously complex; eminently quaffable.",
     "tags": ["light", "mixing"],
     "tastingNotes": ["Crisp", "Clean"],
     "specs": {
@@ -88,7 +88,7 @@
     "image": "/images/products/rum-151.webp",
     "images": ["/images/products/rum-151.webp"],
     "shortDescription": "Strong · Bold · High Proof",
-    "description": "A high-proof rum designed for bold cocktails and intensity.",
+    "description": "Virago 151 “High-Proof” Rum boasts a clean yet rich flavor profile with notes of tropical fruit intermingling with earthy esters. An essential ingredient in many classic cocktails and punches, Virago 151 is certain to be a welcome addition to any cocktail bar.",
     "tags": ["high-proof"],
     "tastingNotes": ["Spice", "Heat"],
     "specs": {
@@ -108,7 +108,7 @@
     "image": "/images/products/oolong-gin.webp",
     "images": ["/images/products/oolong-gin.webp"],
     "shortDescription": "Herbal · Smooth · Unique",
-    "description": "A modern gin infused with oolong tea for a refined botanical profile.",
+    "description": "Lively, layered aromas of cracked peppercorn, freshly-cut grass and cinnamon offer a beguiling introduction to this captivating gin. Presenting a counterpoint to more citrus-forward gins, the palate is suffused with piquant notes of Szechuan pepper balanced against the fragrant herbaceousness of Oolong tea, lemon and grapefruit zest and sweet anise before fading into a long, savory finish.",
     "tags": ["botanical", "tea-infused"],
     "tastingNotes": ["Tea", "Herbal", "Smooth"],
     "specs": {
@@ -128,7 +128,7 @@
     "image": "/images/products/coffee.webp",
     "images": ["/images/products/coffee.webp"],
     "shortDescription": "Rich · Dark · Sweet",
-    "description": "A rich coffee liqueur with deep roasted flavor.",
+    "description": "Inspired by Blanchard’s Coffee Roasting Co’s delicious Dark as Dark coffee roast, Virago Spirits endeavored to capture the very essence of that roast in liqueur form. After months of experimentation, we have produced an intoxicating coffee liqueur that delicately overlays the coffee’s oily, smoky notes with rich overtones of dark chocolate and creamy espresso.",
     "tags": ["coffee"],
     "tastingNotes": ["Coffee", "Chocolate"],
     "specs": {
@@ -185,7 +185,7 @@
     "image": "/images/products/habiscus-gin.webp",
     "images": ["/images/products/hibiscus-gin.webp"],
     "shortDescription": "Floral · Bright · Vibrant",
-    "description": "A floral gin infused with hibiscus for a bold and colorful experience.",
+    "description": "Kali is a refreshingly twist on our original Modern Gin with Oolong Tea. Kali is the perfect gin for summer spritzes, gin and tonics and for updating your favorite gin classics. Intensely ruby in hue, it is saturated with lush notes of piquant hibiscus tea, candied orange peel, and cracked peppercorn layered upon a traditional Juniper base.",
     "tags": ["floral"],
     "tastingNotes": ["Hibiscus", "Floral", "Bright"],
     "specs": {

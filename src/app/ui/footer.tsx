@@ -6,7 +6,7 @@ import { workSans } from "./fonts"
 export function Footer(){
     return (<footer className={`w-full flex items-center 
         bg-gradient-to-br from-neutral-900 via-neutral-950 to-black
-        justify-center 
+        justify-center text-white
          px-3 py-6 lg:p-10`}>
 
 <div className="flex flex-col text-[16px] tracking-widest w-full lg:flex-row justify-center  items-center lg:justify-evenly">

@@ -2,6 +2,9 @@
 import { fetchProductById } from "@/app/lib/fetch";
 import { oswald } from "@/app/ui/fonts";
 import { Oswald } from "next/font/google";
+import { Add } from "@/app/ui/products/addToCart";
+
+
 export default async function ProductDetails({
   params,
 }: {
@@ -20,6 +23,7 @@ export default async function ProductDetails({
   }
 
   return (
+    <>
     <div className="p-6 pt-10 lg:pt-20 bg-red-950/10 text-black grid md:grid-cols-2 min-h-screen gap-4">
       <div className="w-full h-[400px] lg:w-[35vw]">
         <img
@@ -34,29 +38,17 @@ export default async function ProductDetails({
           {product.name}
         </h1>
         <p className="text-sm">
-          Premium handcrafted spirit with rich flavor and smooth finish.
+         {product.description}
         </p>
 
         <p className="text-2xl font-semibold ">
           ${product.price}
         </p>
-<p className={`text-[14px] font-bold ${oswald.className} tracking-widest`}>QUANTITY</p>
-<div className="flex p-1">
-    <button type="button" aria-label="remove one quantity"
-    className={`w-10 h-10 p-3 bg-black/80 rounded-lg flex
-    text-white 
-    justify-center items-center active:scale-95`}>-</button>
-   <div className="w-[70%] lg:w-[20%] h-full flex justify-center items-center">
-    <p>1</p></div>
-     <button type="button" aria-label="add one quantity"
-     className={`w-10 h-10 p-3 bg-black/80 rounded-lg text-white
-      flex justify-center items-center active:scale-95`}>+</button>
-
-</div>
-        <button className="bg-black/80 text-white px-6 py-3 rounded-lg hover:scale-105 transition">
-          Add to cart
-        </button>
+<Add product={product} />
+        
       </div>
     </div>
+
+    </>
   );
 }
