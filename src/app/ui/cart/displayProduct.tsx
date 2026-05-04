@@ -36,7 +36,7 @@ export function ShowCart() {
   return (
     <div className={`${inter.className} lg:pt-25 
     pt-10 text-black justify-center lg:justify-between
-     w-full flex flex-col lg:flex-row p-5`}>
+     w-full flex flex-col lg:flex-row p-3 lg:p-6 `}>
         <div className="w-full hidden  lg:w-[68%] gap-4 lg:flex flex-col">
      <h2 className="font-bold text-2xl">Your Carts ({products.length} items)</h2>
       {products.map((product, i) => (
@@ -72,13 +72,13 @@ export function ShowCart() {
       ))}
     </div>
 
-  <div className="w-full lg:hidden gap-4 flex flex-col">
-     <h2 className="font-bold text-2xl">Your Carts ({products.length} items)</h2>
+  <div className="w-full lg:hidden gap-1 flex flex-col">
+     <h2 className="text-lg mb-5">Your Carts ({products.length} items)</h2>
       {products.map((product, i) => (
         <div key={i} className={`flex w-full
-            rounded-lg shadow-[0_0_5px_1px_rgba(0,0,0,0.3)]
+            shadow-[0_0_5px_1px_rgba(0,0,0,0.3)]
             justify-between flex-col
-             p-2 bg-white`}>
+             p-3 bg-white`}>
                 <div className="flex justify-between">
          <div className={` w-25
           h-25
@@ -93,12 +93,12 @@ export function ShowCart() {
         </div>
         <div className="h-full w-[70%]">
         <div className=" flex flex-col justify-center gap-3">
-          <p className="font-bold text-sm ">{product.name}</p>  
-          <p className="font-bold text-sm">${product.price}</p>
+          <p className="text-sm ">{product.name}</p>  
+          <p className="text-sm">${product.price}</p>
         </div>
          <div className="w-[22%] flex flex-col">
             <p className="text-sm">Total</p>
-            <p className="font-bold text-sm">${(product.price*product.quantity).toFixed(2)}</p>
+            <p className="text-sm">${(product.price*product.quantity).toFixed(2)}</p>
         </div>
         </div>
         </div>
@@ -119,7 +119,7 @@ export function ShowCart() {
 
     <div className={`w-full lg:w-[30%] bg-white 
     h-100 block mt-5 lg:mt-0
- rounded-lg shadow-[0_0_5px_1px_rgba(0,0,0,0.3)]
+ lg:rounded-lg shadow-[0_0_5px_1px_rgba(0,0,0,0.3)]
             p-5`}>
 <h3 className="text-lg font-bold">Order Summary</h3>
 <div className="pt-10 text-sm flex justify-between">
