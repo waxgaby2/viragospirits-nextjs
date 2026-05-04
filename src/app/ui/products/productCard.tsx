@@ -15,7 +15,7 @@ export function ProductCard({ product }: { product: Product }) {
     <div className={` m-2 rounded-2xl 
         shadow-[0_0_8px_7px_rgba(255,255,255,0.1)]
        text-bllack/80 active:scale-95
-hover:bg-white/80
+hover:bg-white/80 text-black/90
        hover:shadow-[0_0_10px_7px_rgba(255,255,255,0.3)]
    active:bg-white/70
      overflow-hidden transition-all duration-300 ease cursor-pointer

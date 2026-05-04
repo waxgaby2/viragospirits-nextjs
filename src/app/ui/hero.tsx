@@ -5,7 +5,7 @@ import { Tear } from "../ui/tear";
 
 export function Hero() {
   return (
-    <section className="relative  h-screen bg-black w-full">
+    <section className="relative  h-screen bg-black w-full border-b border-white/50">
     
       <div
         className="absolute inset-0 pointer-events-none bg-contain md:bg-cover bg-center md:bg-right bg-no-repeat"
@@ -17,7 +17,7 @@ export function Hero() {
 
  
       <div className="relative z-10 flex h-full items-center px-6 md:px-12">
-        <div className="text-white/80 max-w-3xl flex flex-col">
+        <div className="text-white max-w-3xl flex flex-col">
           <h1 className={`h1 mb-4 
           font-thin md:text-6xl flex
           flex-col 
@@ -67,7 +67,7 @@ export function Hero() {
 
 export function ProductsHero() {
   return (
-    <section className="relative  h-screen bg-black w-full">
+    <section className="relative border-b border-white/50  h-screen bg-black w-full">
     
       <div
         className="absolute inset-0 pointer-events-none bg-contain md:bg-cover bg-center md:bg-right bg-no-repeat"

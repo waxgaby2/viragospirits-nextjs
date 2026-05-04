@@ -28,8 +28,8 @@ mx-auto lg:mx-0
 <Link href="/" 
 className="hover:text-red-500 transition-colors duration-300">About us</Link>
 
-<Link href="/"
-className="hover:text-red-500 transition-colors duration-300">Shop</Link>
+<Link href="/products"
+className="hover:text-red-500 transition-colors duration-300">Spirits</Link>
 
 <Link href="/">Where to buy</Link>
 </div>
@@ -40,9 +40,6 @@ Tasting Room</Link>
 
 <Link href="/" 
 className="hover:text-red-500 transition-colors duration-300">Events</Link>
-
-<Link href="/"
-className="hover:text-red-500 transition-colors duration-300">Spirits</Link>
 
 <Link href="/"
 className="hover:text-red-500 transition-colors duration-300">Contact</Link>

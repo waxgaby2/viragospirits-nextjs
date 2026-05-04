@@ -12,7 +12,7 @@ import Link from "next/link";
 export function ShowCart() {
   const { cart } = useAppContext();
   const [products, setProducts] = useState<any[]>([]);
-
+const[loading,setLoading]=useState<boolean>(true);
   useEffect(() => {
     async function loadProducts() {
       if (!cart) return;
@@ -26,13 +26,24 @@ export function ShowCart() {
     };
   })
 );
-
+setLoading(false)
       setProducts(results);
     }
 
     loadProducts();
   }, [cart]);
-
+if(loading){
+    return (
+        <div className="flex justify-center items-center w-full h-screen">
+  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white" />
+    </div>)
+}
+if(!cart || cart?.length<1){
+     return (
+        <div className="flex justify-center items-center w-full h-screen">
+ <p>Cart is empty</p>
+    </div>) 
+}
   return (
     <div className={`${inter.className} lg:pt-25 
     pt-10 text-black justify-center lg:justify-between

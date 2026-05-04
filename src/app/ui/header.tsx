@@ -20,15 +20,10 @@ className="" />
  h-[100%] font-[500]
  text-white/80 gap-4 hidden lg:flex
  justify-center items-center`}>
-<Link href="/spirits"
+<Link href="/products"
 className={`hover:text-gray-400
 transition-all duration-300
 ease-linear`}>Spirits</Link>
-
-<Link href="/"
-className={`hover:text-gray-400
-transition-all duration-300
-ease-linear`}>Shop</Link>
 
 <Link href="/"
 className={`hover:text-gray-400
