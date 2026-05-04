@@ -12,8 +12,9 @@ type Product = {
 
 export function Remove({ product }: { product: Product }){
       const { cart,setCart } = useAppContext();
+
 function handleRemove(item: Product){
-const filter=cart?.filter(p=> p.id !== product.id);
+const filter = cart?.filter(p => p.id !== product.id) || [];
 setCart(filter);
 }
     return (<div className="flex justify-center h-full items-center">
