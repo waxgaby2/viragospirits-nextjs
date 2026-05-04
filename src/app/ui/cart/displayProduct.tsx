@@ -37,14 +37,15 @@ export function ShowCart() {
     <div className={`${inter.className} lg:pt-25 
     pt-10 text-black justify-center lg:justify-between
      w-full flex flex-col lg:flex-row p-3 lg:p-6 `}>
+      
         <div className="w-full hidden  lg:w-[68%] gap-4 lg:flex flex-col">
-     <h2 className="font-bold text-2xl">Your Carts ({products.length} items)</h2>
+     <h2 className="font-bold text-2xl text-white/80">Your Carts ({products.length} items)</h2>
       {products.map((product, i) => (
         <div key={i} className={`flex lg:h-50 w-full gap-2
             rounded-lg shadow-[0_0_5px_1px_rgba(0,0,0,0.3)]
             justify-center 
             lg:justify-between flex-col lg:flex-row
-             p-3 bg-white`}>
+             p-3 bg-white/80`}>
          <div className={`m-auto w-[50%] lg:h-auto lg:w-[22%]
           rounded-md flex justify-center items-center`}> 
             <Image  src={product.image}
@@ -71,14 +72,14 @@ export function ShowCart() {
         </div>
       ))}
     </div>
-
+    
   <div className="w-full lg:hidden gap-1 flex flex-col">
      <h2 className="text-lg mb-5">Your Carts ({products.length} items)</h2>
       {products.map((product, i) => (
         <div key={i} className={`flex w-full
             shadow-[0_0_5px_1px_rgba(0,0,0,0.3)]
             justify-between flex-col
-             p-3 bg-white`}>
+             p-3 bg-white/80`}>
                 <div className="flex justify-between">
          <div className={` w-25
           h-25
@@ -92,13 +93,13 @@ export function ShowCart() {
            transition`} />
         </div>
         <div className="h-full w-[70%]">
-        <div className=" flex flex-col justify-center gap-3">
+        <div className=" flex flex-col">
           <p className="text-sm ">{product.name}</p>  
-          <p className="text-sm">${product.price}</p>
+          <p className="text-md">${product.price}</p>
         </div>
-         <div className="w-[22%] flex flex-col">
+         <div className=" flex flex-col">
             <p className="text-sm">Total</p>
-            <p className="text-sm">${(product.price*product.quantity).toFixed(2)}</p>
+            <p className="text-md">${(product.price*product.quantity).toFixed(2)}</p>
         </div>
         </div>
         </div>
@@ -117,7 +118,7 @@ export function ShowCart() {
     
 
 
-    <div className={`w-full lg:w-[30%] bg-white 
+    <div className={`w-full lg:w-[30%] bg-white/80
     h-100 block mt-5 lg:mt-0
  lg:rounded-lg shadow-[0_0_5px_1px_rgba(0,0,0,0.3)]
             p-5`}>

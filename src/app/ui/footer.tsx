@@ -6,7 +6,7 @@ import { workSans } from "./fonts"
 export function Footer(){
     return (<footer className={`w-full flex items-center 
         bg-gradient-to-br from-neutral-900 via-neutral-950 to-black
-        justify-center text-white
+        justify-center text-white/80
          px-3 py-6 lg:p-10`}>
 
 <div className="flex flex-col text-[16px] tracking-widest w-full lg:flex-row justify-center  items-center lg:justify-evenly">
@@ -50,7 +50,7 @@ className="hover:text-red-500 transition-colors duration-300">Contact</Link>
 </div>
 <div className="w-full mt-10 lg:mt-0 max-lg:text-center lg:w-[45%]">
     <h2 className={`text-md lg:text-5xl lg:mb-10 ${bodoni.className}`}>Please Drink Responsibly</h2>
-<p className={`text-sm text-white ${workSans.className}`}>The Virago Spirits Board follows both 
+<p className={`text-sm text-white/80 ${workSans.className}`}>The Virago Spirits Board follows both 
     the Distilled Spirits Council (DISCUS) and 
     American Craft Spirits Association (ACSA) Code
      of Responsible Practices for Beverage Alcohol 

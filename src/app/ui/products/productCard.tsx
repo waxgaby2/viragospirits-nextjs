@@ -13,11 +13,11 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     
     <div className={` m-2 rounded-2xl 
-        shadow-[0_0_8px_7px_rgba(0,0,0,0.1)]
-       text-white active:scale-95
-
-       hover:shadow-[0_0_10px_7px_rgba(0,0,0,0.5)]
-       hover:bg-black/90 active:bg-black/90
+        shadow-[0_0_8px_7px_rgba(255,255,255,0.1)]
+       text-white/80 active:scale-95
+hover:bg-black/70
+       hover:shadow-[0_0_10px_7px_rgba(255,255,255,0.3)]
+   active:bg-black/70
      overflow-hidden transition-all duration-300 ease cursor-pointer
      bg-black/80 p-5`}>
 <Link href={`/products/${product.id}`} className="w-full h-full">

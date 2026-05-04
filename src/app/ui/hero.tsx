@@ -17,13 +17,13 @@ export function Hero() {
 
  
       <div className="relative z-10 flex h-full items-center px-6 md:px-12">
-        <div className="text-white max-w-3xl flex flex-col">
+        <div className="text-white/80 max-w-3xl flex flex-col">
           <h1 className={`h1 mb-4 
           font-thin md:text-6xl flex
           flex-col 
            text-4xl font-serif`}>
             CRAFTED SPIRITS, 
-            <span>REFINED <span className="text-red-600/90">TASTE.</span></span>
+            <span>REFINED <span className="text-red-800/90">TASTE.</span></span>
           </h1>
           <p className={` text-gray-300 mb-6
           md:inline-block md:w-110 text-sm w-75
@@ -34,24 +34,24 @@ export function Hero() {
            <div className={`flex flex-col
            md:flex-row md:gap-7`}><Link href="/" className={`py-5 px-8
             border max-md:shadow-[inset_0px_0px_9px_3px_rgba(255,255,255,0.3)]
-        md:border-white border-white/60 inline-block
-            md:bg-white md:text-black w-50 text-sm
-         md:w-55 text-center hover:text-white
+        md:border-white/80 border-white/60 inline-block
+            md:bg-white/80 md:text-black w-50 text-sm
+         md:w-55 text-center hover:text-white/80
         hover:bg-black/10 font-semibold
          active:scale-90
         active:bg-black/10
-        active:text-white
+        active:text-white/80
         transition-all duration-300 ease`}>PLAN YOUR VISIT</Link>
         <Link href="/products" className={`py-5 px-8 border
-        lg:bg-red-600/90  w-50 text-sm
+        lg:bg-red-800/90  w-50 text-sm
      max-md:shadow-[inset_0px_0px_9px_3px_rgba(255,255,255,0.3)]
-        border-white/60 hover:text-red-600/90
-        lg:border-red-600/90  md:w-55 text-center
+        border-white/60 hover:text-red-800/90
+        lg:border-red-800/90  md:w-55 text-center
         hover:bg-black/10 font-semibold inline-block
          active:scale-90 
         transition-all duration-300 ease
         mt-7 md:mt-0 active:bg-black/10
-        active:text-red-600/90`}>EXPLORE SPIRITS</Link>
+        active:text-red-800/90`}>EXPLORE SPIRITS</Link>
          
         </div>
         </div>
@@ -95,16 +95,16 @@ export function ProductsHero() {
            
            <div className={`flex flex-col
            md:flex-row md:gap-7`}>  <Link href="/" className={`py-5 px-8 border
-        lg:bg-red-600/90 w-50 text-sm
+        lg:bg-red-800/90 w-50 text-sm
      max-md:shadow-[inset_0px_0px_9px_3px_rgba(255,255,255,0.3)]
-        border-white/60 hover:text-red-600/90
-        lg:border-red-600/90  md:w-55 text-center
+        border-white/60 hover:text-red-800/90
+        lg:border-red-800/90  md:w-55 text-center
         hover:bg-black/10 font-semibold
        inline-block
         transition-all duration-300 ease
        active:scale-90
         mt-7 md:mt-0 active:bg-black/10
-        active:text-red-600/90`}>SHOP ALL</Link>
+        active:text-red-800/90`}>SHOP ALL</Link>
          
         </div>
         </div>

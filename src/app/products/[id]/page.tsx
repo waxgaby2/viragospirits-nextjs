@@ -24,7 +24,7 @@ export default async function ProductDetails({
 
   return (
     <>
-    <div className="p-6 pt-10 lg:pt-20 bg-red-950/10 text-black grid md:grid-cols-2 min-h-screen gap-4">
+    <div className="p-6 pt-10 lg:pt-20 text-white/80 grid md:grid-cols-2 min-h-screen gap-4">
       <div className="w-full h-[400px] lg:w-[35vw]">
         <img
           src={product.image}
@@ -34,10 +34,10 @@ export default async function ProductDetails({
       </div>
 
       <div className="space-y-4">
-        <h1 className={`text-3xl lg:text-4xl text-black font-serif mb-8 lg:mb-20`}>
+        <h1 className={`text-3xl lg:text-4xl  font-serif mb-8 lg:mb-20`}>
           {product.name}
         </h1>
-        <p className="text-sm">
+        <p className="text-sm lg:leading-relaxed">
          {product.description}
         </p>
 

@@ -8,7 +8,7 @@ import { inter } from "./fonts";
 export function OurSpirits(){
 return (
 <section className={`mb-5 text-black pb-20 
-text-sm
+text-sm bg-white/80
   pt-5
 w-full`}>
     <div><h2 className={`text-red-800/90 font-bold
@@ -85,11 +85,11 @@ overflow-x-auto scroll-smooth ${inter.className}`}>
     </div>   
 </div>
 <div className={`flex justify-center my-5`}>
-  <Link href="/"
- className={`py-5 px-8 border
+  <Link href="/products"
+ className={`p-4
     bg-red-800/90  w-60 text-sm
-  border-red-800/90 text-white
-  hover:bg-white hover:text-red-800/90 
+  text-white active:scale-95
+  hover:bg-white hover:text-black
          md:w-60 text-center
             shadow-[0_0_15px_2px_rgba(0,0,0,0.5)]
         transition-all duration-300 ease

@@ -43,21 +43,29 @@ if (existing) {
 <p className={`text-[14px] mb-3 font-bold ${oswald.className} tracking-widest`}>QUANTITY</p>
  <div className="flex mb-3">
     <button type="button" aria-label="remove one quantity"
-    className={`w-10 h-10 p-3 bg-black/80 rounded-lg flex
-    text-white 
+    className={`w-10 h-10 p-3 bg-red-800/90 rounded-lg flex
+    text-white active:bg-white
+      active:text-black hover:scale-105 transition
+      duration-300 ease active:shadow-[0_0_2px_2px_rgba(255,255,255,0.2)]
     justify-center items-center active:scale-95`}
     onClick={()=>{setNumber(prev => prev === 1 ? 1 : prev -1
     )}}>-</button>
    <div className="md:w-[70%] w-full lg:w-[20%] h-10 flex justify-center items-center">
     <p>{number}</p></div>
      <button type="button" aria-label="add one quantity"
-     className={`w-10 h-10 p-3 bg-black/80 rounded-lg text-white
-      flex justify-center items-center active:scale-95`}
+     className={`w-10 h-10 p-3 bg-red-800/90 rounded-lg text-white
+      flex justify-center items-center active:scale-95
+      active:bg-white active:shadow-[0_0_2px_2px_rgba(255,255,255,0.2)]
+      active:text-black hover:scale-105 transition
+      duration-300 ease`}
       onClick={()=>{setNumber(prev => prev+1)}}
       >+</button>
       </div>
-      <button className={`bg-black/80 text-white px-6 py-3 
-      active:scale-95 rounded-lg hover:scale-105 transition`}
+      <button className={`bg-red-800/90 text-white px-6 py-3 
+      active:scale-95 rounded-lg active:bg-white
+      active:text-black hover:scale-105 transition
+      acive:shadow-[0_0_2px_2px_rgba(255,255,255,0.2)]
+      duration-300 ease`}
       onClick={handleAdd}>
           Add to cart
         </button>

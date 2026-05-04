@@ -6,7 +6,7 @@ import { CartCounter } from "./cartCounter"
 
 export function Header(){
     return (<div className={`p-1 lg:p-4 w-full
-         bg-red-800/90
+    bg-gradient-to-br from-neutral-900 via-neutral-950 to-black
     flex items-center 
 justify-between sticky top-0 z-50`}>
 <Image src="/logo/viragologo.webp"
@@ -17,7 +17,7 @@ className="" />
 <div className={`${oswald.className} uppercase tracking-widest
  text-[15px] m-auto
  h-[100%] font-[500]
- text-white gap-4 hidden lg:flex
+ text-white/80 gap-4 hidden lg:flex
  justify-center items-center`}>
 <Link href="/spirits"
 className={`hover:text-gray-400
@@ -57,9 +57,10 @@ ease-linear`}>Contact</Link>
 </div>
 <Link href="/"
 className={`m-auto py-3 px-8 hidden lg:flex
-hover:bg-white hover:text-red-800/90 
+hover:bg-white/80 hover:text-black 
 traansition-all text-[13px]
-duration-500 ease-in-out bg-black text-white
+duration-500 ease-in-out bg-red-800/90 
+text-white/80 active:scale-95
 font-semibold`}>PLAN YOUR VISIT</Link>
 <div className="flex gap-6">
 <Link href="/cart">

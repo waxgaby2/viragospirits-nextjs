@@ -7,7 +7,7 @@ import { workSans } from './fonts';
 export function AfterHero(){
     return (
 <div className={`flex md:justify-between 
-md:leading-2.5 px-5 bg-white w-full
+md:leading-2.5 px-5 bg-white/80 w-full
 lg:h-[50vh]
 flex-col md:flex-row pt-20 mb-0 pb-10
 md:px-15 ${inter.className}`}>

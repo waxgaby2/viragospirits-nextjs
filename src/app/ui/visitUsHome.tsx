@@ -10,7 +10,7 @@ return (
 <section className={`w-[95vw] m-auto
 shadow-[0_0_15px_8px_rgba(0,0,0,0.5)]
 py-7 text-sm lg:text-md
-rounded-3xl
+rounded-3xl text-white/80
 bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950
 relative`}>
         <div className={`w-full flex justify-between p-3`}>
@@ -103,7 +103,7 @@ relative`}>
             flex flex-col lg:justify-evenly lg:flex-row justify-center 
             items-center ${oswald.className} tracking-wide`}>
  <div className={` lg:w-[25%] w-[70%] md:w-[50%]
- flex flex-col bg-white p-5 md:h-[350px] h-[250px]
+ flex flex-col bg-white/80 p-5 md:h-[350px] h-[250px]
    justify-center items-center rounded-2xl
   shadow-[0_0_15px_8px_rgba(0,0,0,0.5)]`}>
 <MapPinIcon className="w-10 h-10 lg:w-15 lg:h-15 animate-[bounce_2s_infinite]" />
@@ -112,7 +112,7 @@ relative`}>
  </div>
   <div className={` lg:w-[25%] w-[70%] mt-10
   md:w-[50%]
- flex flex-col bg-white lg:m-4 p-5 md:h-[350px]
+ flex flex-col bg-white/80 lg:m-4 p-5 md:h-[350px]
   justify-center items-center rounded-2xl h-[250px]
   shadow-[0_0_15px_8px_rgba(0,0,0,0.5)]`}>  
   <CalendarDaysIcon className="w-10 h-10 lg:w-15 lg:h-15 animate-[bounce_2s_infinite]" />

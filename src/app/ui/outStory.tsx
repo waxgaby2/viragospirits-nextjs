@@ -7,7 +7,7 @@ import Link from "next/link";
 export function Story(){
     return (<section className={`
         bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950
-        p-6 lg:px-25
+        p-6 lg:px-25 text-white/80
     lg:flex lg:justify-between items-center 
     justify-center min-h-screen 
     [clip-path:polygon(0_0,100%_0,100%_90%,0_100%)]`}>

@@ -37,8 +37,9 @@ export function StayInLoop() {
             onChange={(e) => setEmail(e.target.value)}
             className={`w-[80vw] md:w-[350px] px-5 py-4 rounded-md 
             bg-black/80 text-center lg:text-left
-            placeholder-white text-white text-sm 
+            placeholder-white/80 text-white/80 text-sm 
             shadow-[0_0_4px_2px_rgba(0,0,0,0.5)]
+            active:scale-95
             focus:outline-none focus:border-red-700/80
             transition-all`}
           />
@@ -46,7 +47,7 @@ export function StayInLoop() {
           <button
             className={`px-8 py-4 bg-red-800/90 hover:bg-red-700
             text-white font-semibold rounded-md
-        text-sm
+        text-sm cursor-pointer
             shadow-[0_0_10px_2px_rgba(0,0,0,0.5)]
             transition-all duration-300 ease-in-out`}
           >
