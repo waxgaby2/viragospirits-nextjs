@@ -72,9 +72,9 @@ export function ShowCart() {
         </div>
       ))}
     </div>
-    
+
   <div className="w-full lg:hidden gap-1 flex flex-col">
-     <h2 className="text-lg mb-5">Your Carts ({products.length} items)</h2>
+     <h2 className="text-lg mb-5 text-white/80">Your Carts ({products.length} items)</h2>
       {products.map((product, i) => (
         <div key={i} className={`flex w-full
             shadow-[0_0_5px_1px_rgba(0,0,0,0.3)]
@@ -146,7 +146,7 @@ Tax
      $10
     </p>
 </div>
-<div className="w-full bg-gray-300 h-[2px] my-10" />
+<div className="w-full bg-black/50 h-[2px] my-10" />
     <div className="flex justify-center items-center">
     <Link href="/cart" className={`bg-black/80
      text-white py-4 px-10 

@@ -94,7 +94,7 @@ export function ProductsHero() {
           </p>
            
            <div className={`flex flex-col
-           md:flex-row md:gap-7`}>  <Link href="/" className={`py-5 px-8 border
+           md:flex-row md:gap-7`}>  <Link href="#spirits" className={`py-5 px-8 border
         lg:bg-red-800/90 w-50 text-sm
      max-md:shadow-[inset_0px_0px_9px_3px_rgba(255,255,255,0.3)]
         border-white/60 hover:text-red-800/90

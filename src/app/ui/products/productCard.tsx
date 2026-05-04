@@ -14,12 +14,12 @@ export function ProductCard({ product }: { product: Product }) {
     
     <div className={` m-2 rounded-2xl 
         shadow-[0_0_8px_7px_rgba(255,255,255,0.1)]
-       text-white/80 active:scale-95
-hover:bg-black/70
+       text-bllack/80 active:scale-95
+hover:bg-white/80
        hover:shadow-[0_0_10px_7px_rgba(255,255,255,0.3)]
-   active:bg-black/70
+   active:bg-white/70
      overflow-hidden transition-all duration-300 ease cursor-pointer
-     bg-black/80 p-5`}>
+     bg-white/80 p-5`}>
 <Link href={`/products/${product.id}`} className="w-full h-full">
       <div className="w-full h-50 flex justify-center items-center">
         <Image

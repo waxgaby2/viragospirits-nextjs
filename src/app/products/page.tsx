@@ -11,9 +11,9 @@ export default function Page(){
         <div>
         
            <ProductsHero />
-           <h2 className={`font-serif text-md 
+           <h2 id="spirits" className={`font-serif text-2xl 
            text-white/80
-           lg:text-3xl mt-5 lg:mt-10 tracking-wider
+           lg:text-3xl mt-10 tracking-wider
            ml-4 lg:ml-10`}>Our Spirits</h2>
              <Suspense       
         fallback={<div className={`text-red-600 flex flex-col

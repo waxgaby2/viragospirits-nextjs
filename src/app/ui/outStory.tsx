@@ -31,6 +31,7 @@ export function Story(){
     <Link href="/"
     className={`inline-block lg:font-bold bg-red-800/90
     lg:py-6 lg:px-10 py-4 px-8 mt-7
+    active:scale-95 transition ease
     hover:bg-black/80`}>LEARN OUR STORY</Link>
 </div>
 

@@ -47,7 +47,7 @@ export function StayInLoop() {
           <button
             className={`px-8 py-4 bg-red-800/90 hover:bg-red-700
             text-white font-semibold rounded-md
-        text-sm cursor-pointer
+        text-sm cursor-pointer active:scale-95
             shadow-[0_0_10px_2px_rgba(0,0,0,0.5)]
             transition-all duration-300 ease-in-out`}
           >

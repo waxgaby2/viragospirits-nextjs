@@ -8,6 +8,7 @@ export function Header(){
     return (<div className={`p-1 lg:p-4 w-full
     bg-gradient-to-br from-neutral-900 via-neutral-950 to-black
     flex items-center 
+    border-b border-white/50
 justify-between sticky top-0 z-50`}>
 <Image src="/logo/viragologo.webp"
 alt="virago logo"
