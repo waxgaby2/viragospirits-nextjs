@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 type Product = {
-  id: number;
+  id: string
   name: string;
   price: number;
   image: string;
@@ -21,7 +22,7 @@ export function ProductCard({ product }: { product: Product }) {
      bg-black/80 p-5`}>
 <Link href={`/products/${product.id}`} className="w-full h-full">
       <div className="w-full h-50 flex justify-center items-center">
-        <img
+        <Image
           src={product.image}
           alt={product.name}
           width={100}

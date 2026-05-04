@@ -1,36 +1,40 @@
 'use client'
 import { useState, useEffect } from "react";
 import { oswald } from "../fonts";
+import { useAppContext } from "@/app/context/userContext";
+
+
+type CartItem = {
+  id: string;
+  quantity: number;
+};
 
 export function Add({product}:any){
 const [number,setNumber]=useState<number>(1);
 const [price,setPrice]=useState<number>(0);
+const {cart,setCart}=useAppContext();
+
+
 useEffect(()=>{
 setPrice(prev => product.price * number)
 },[number,product.price])
 
 
 function handleAdd(){
+  if (!cart) return;
 
-const newProduct={product,price,number}
-const fetchProducts = localStorage.getItem("products") || null;
-if(fetchProducts===null){
-  return;
+const existing = cart.find(item => item.id === product.id);
+
+if (existing) {
+  const updated = cart.map(item =>
+    item.id === product.id
+      ? { ...item, quantity: item.quantity + number }
+      : item
+  );
+  setCart(updated);
+} else {
+  setCart([...cart, { id: product.id, quantity: number }]);
 }
-const products=JSON.parse(fetchProducts);
-const productExist=products.some((p:any)=>product.id===p.product.id);
-if(productExist){
-const productFind=products.find((p:any)=> product.id===p.product.id);
-const filtered=products.filter((p:any)=>product.id !==p.product.id)
-  productFind.price += price;
-  productFind.number += number;
-const updateProducts=[...filtered,productFind];
-localStorage.setItem("products", JSON.stringify(updateProducts));
-return;
-}
-const updatedProducts=[...products,newProduct]
-localStorage.setItem("products", JSON.stringify(updatedProducts));
-  console.log("Product added:", products);
 }
 
     return (
@@ -57,7 +61,78 @@ localStorage.setItem("products", JSON.stringify(updatedProducts));
       onClick={handleAdd}>
           Add to cart
         </button>
-<p>{price.toFixed(2)}</p>
+</div>    
+    )
+}
+
+
+
+
+export function Quantity({product}:any){
+const [number,setNumber]=useState<number>(0);
+const [price,setPrice]=useState<number>(0);
+const {cart,setCart}=useAppContext();
+
+
+
+function handleAdd(){
+  if (!cart) return;
+
+const existing = cart.find(item => item.id === product.id);
+
+if (existing) {
+  const updated = cart.map(item =>
+    item.id === product.id
+      ? { ...item, quantity: item.quantity + 1 }
+      : item
+  );
+  setCart(updated);
+} else {
+  setCart([...cart, { id: product.id, quantity: number }]);
+}
+}
+
+
+
+function handleSubtract(){
+  if (!cart) return;
+
+const existing = cart.find(item => item.id === product.id);
+
+if (existing) {
+  const updated = cart.map(item =>
+    item.id === product.id
+      ? { ...item, quantity: item.quantity - 1 }
+      : item
+  );
+  setCart(updated);
+} else {
+  setCart([...cart, { id: product.id, quantity: number }]);
+}
+}
+
+    return (
+    <div className="p-1 w-full h-full flex flex-col items-center justify-center">
+        
+<p className={`text-[14px] mb-3  tracking-widest`}>Quantity</p>
+ <div className="flex border-2 border-gray-300 justify-between rounded-sm">
+    <button type="button" aria-label="remove one quantity"
+    className={`w-5 h-5 p-4 border-r-2 flex
+    text-black border-gray-300
+    justify-center items-center active:scale-95`}
+    onClick={()=>{handleSubtract();}}>-</button>
+   <div className="flex justify-center w-[40px] items-center">
+    <p>{product.quantity}</p></div>
+     <button type="button" aria-label="add one quantity"
+     className={`w-5 h-5 p-4 border-l-2 text-black
+      flex justify-center
+      border-gray-300 items-center active:scale-95`}
+      onClick={()=>{
+       handleAdd();
+      }}
+      >+</button>
+      </div>
+    
 </div>    
     )
 }

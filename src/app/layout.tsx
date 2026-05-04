@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { inter } from '@/app/ui/fonts';
+import { UserProvider } from "./context/userContext";
+
 
 export const metadata: Metadata = {
   title: "Virago Spririts",
@@ -21,7 +23,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.className } bg-white h-full antialiased`}
     >
-      <body className="min-h-full bg-white">{children}</body>
+      <body className="min-h-full bg-white"><UserProvider>{children}</UserProvider></body>
     </html>
   );
 }
