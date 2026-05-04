@@ -114,19 +114,29 @@ if (existing) {
     return (
     <div className="p-1 w-full h-full flex flex-col items-center justify-center">
         
-<p className={`text-[14px] mb-3  tracking-widest`}>Quantity</p>
- <div className="flex border-2 border-gray-300 justify-between rounded-sm">
+<p className={`text-sm lg:text-[14px] lg:mb-3 tracking-widest`}>Quantity</p>
+ <div className="flex justify-between rounded-sm">
     <button type="button" aria-label="remove one quantity"
-    className={`w-5 h-5 p-4 border-r-2 flex
-    text-black border-gray-300
-    justify-center items-center active:scale-95`}
-    onClick={()=>{handleSubtract();}}>-</button>
-   <div className="flex justify-center w-[40px] items-center">
+    className={`w-3 h-3 lg:w-5 lg:h-5 p-3 lg:p-4 rounded flex
+    text-white 
+    bg-black/70 hover:bg-black/80
+    cursor-pointer border border-black/70
+   active:bg-white active:text-black/70
+      transition-all duration-100 ease
+    justify-center items-center`}
+    onClick={()=>{
+      if(product.quantity===1) return;
+      handleSubtract();}}>-</button>
+   <div className="flex justify-center w-[100px] items-center">
     <p>{product.quantity}</p></div>
      <button type="button" aria-label="add one quantity"
-     className={`w-5 h-5 p-4 border-l-2 text-black
-      flex justify-center
-      border-gray-300 items-center active:scale-95`}
+     className={`w-3 h-3 lg:w-5 lg:h-5 p-3 lg:p-4 rounded flex
+    text-white 
+    bg-black/70 hover:bg-black/80
+    cursor-pointer border border-black/70
+    active:bg-white active:text-black/70
+      transition-all duration-100 ease
+    justify-center items-center `}
       onClick={()=>{
        handleAdd();
       }}
