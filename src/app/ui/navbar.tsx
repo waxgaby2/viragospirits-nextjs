@@ -3,6 +3,7 @@
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from "next/link"
 import { useEffect, useState } from 'react'
+import { oswald } from './fonts'
 
 export function NavBar() {
   const [isOpen, setOpen] = useState(false)
@@ -20,13 +21,12 @@ export function NavBar() {
   }, [isOpen])
 
   const links = [
-    "Spirits",
-    "Shop",
-    "About Us",
-    "Tasting Room",
-    "Events",
-    "Where to buy",
-    "Contact",
+    {name:"Spirits", link:"/products"},
+    {name:"About Us", link:"/"},
+   {name:"Tasting Room", link:"/"}, 
+   {name:"Events", link:"/"} ,  
+   {name:"Where to buy", link:"/"} ,
+   {name:"Contact", link:"/"},
   ]
 
   return (
@@ -34,7 +34,7 @@ export function NavBar() {
       <button type="button"
       aria-label="Toggle Nav Menu"
         onClick={handleToggle}
-        className="sticky right-4 top-2 z-[110] lg:hidden text-white/80"
+        className="sticky right-4 top-2 z-[80] lg:hidden text-white/80"
       >
         {isOpen ? (
           <XMarkIcon className="w-7 h-7 text-white/80" />
@@ -45,24 +45,24 @@ export function NavBar() {
 
       {isOpen &&<div
         onClick={handleToggle}
-        className={`fixed inset-0 z-[98] lg:hidden bg-black/50 backdrop-blur-sm transition-all duration-500
+        className={`fixed inset-0 z-[78] lg:hidden bg-black/50 backdrop-blur-sm transition-all duration-500
         ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
       />}
 
       <nav
         onClick={(e) => e.stopPropagation()}
-        className={`fixed top-0 h-full w-[65vw] max-w-sm z-[99]
+        className={`fixed top-0 h-full w-[65vw] max-w-sm z-[79]
         bg-gradient-to-b from-zinc-900 via-black to-zinc-900
         shadow-[-10px_0_30px_rgba(0,0,0,0.6)]
         px-6 pt-24 overflow-auto text-white/80
-        flex flex-col gap-4 lg:hidden
+        flex flex-col gap-4 lg:hidden ${oswald.className}
         transition-all duration-500 ease-in-out
         ${isOpen ? "right-0" : "right-[-500px]"}`}
       >
-        {links.map((link, i) => (
+        {links.map((nav, i) => (
           <Link
-            key={link}
-            href="/"
+            key={i}
+            href={nav.link}
             onClick={() => setOpen(false)}
             className={`text-lg tracking-widest uppercase
             border-b border-white/10 pb-3
@@ -74,14 +74,14 @@ export function NavBar() {
               transitionDelay: `${i * 80}ms`,
             }}
           >
-            {link}
+            {nav.name}
           </Link>
         ))}
 
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="mt-6 text-center py-4 bg-red-800/90 hover:bg-red-800 active:scale-95 transition rounded-md font-semibold"
+          className="mt-6 text-lg text-center py-4 bg-red-800/90 hover:bg-red-800 active:scale-95 transition rounded-md"
         >
           PLAN YOUR VISIT
         </Link>

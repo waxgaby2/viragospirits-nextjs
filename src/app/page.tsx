@@ -18,8 +18,7 @@ export default function Home() {
      <Story />
      <OurSpirits />
      <VisitUs />
-     <StayInLoop />
-     
+     <StayInLoop /> 
    <Footer />
     </div>
   );

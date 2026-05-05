@@ -3,6 +3,7 @@ import Link from "next/link"
 import { oswald } from "./fonts"
 import { NavBar } from "./navbar"
 import { CartCounter } from "./cartCounter"
+import { CartMenu } from "./cart/displayProduct"
 
 export function Header(){
     return (<div className={`p-1 lg:p-4 w-full
@@ -59,9 +60,9 @@ duration-500 ease-in-out bg-red-800/90
 text-white/80 active:scale-95
 font-semibold`}>PLAN YOUR VISIT</Link>
 <div className="flex gap-6">
-<Link href="/cart">
+
 <CartCounter />
-</Link>
+
 <NavBar />
 </div>
     </div>)

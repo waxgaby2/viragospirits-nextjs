@@ -24,7 +24,7 @@ setCart(filter);
 className="cursor-pointer m-6 ml-0 mb-0"
 onClick={()=>handleRemove((product))}>
 <TrashIcon className={`w-6 h-6 lg:w-7 lg:h-7
- active:scale-95
+ active:scale-95 text-red-800/90
  hover:text-gray-400 transition`} />
 </button>
     </div>)
