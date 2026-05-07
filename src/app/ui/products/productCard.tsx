@@ -1,10 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
+import { urlFor } from "@/app/lib/image";
+
+
+
 type Product = {
-  id: string
+  _id: string
   name: string;
   price: number;
   image: string;
+  slug:{current:string}
 };
 
 export function ProductCard({ product }: { product: Product }) {
@@ -20,13 +25,14 @@ hover:bg-white/80 text-black/90
    active:bg-white/70
      overflow-hidden transition-all duration-300 ease cursor-pointer
      bg-white/80 p-5`}>
-<Link href={`/products/${product.id}`} className="w-full h-full">
+<Link href={`/products/${product.slug}`} className="w-full h-full">
       <div className="w-full h-50 flex justify-center items-center">
         <Image
-          src={product.image}
-          alt={product.name}
-          width={100}
-          height={350}
+            src={urlFor(product.image).width(600).url()}
+  width={400}
+  height={400}
+  alt={product.name}
+           
           className="w-full h-full  object-contain hover:scale-105 transition"
         />
       </div>

@@ -7,8 +7,8 @@ import { Header } from "../ui/header";
 
 
 export const metadata: Metadata = {
-  title: "Cart Check Out",
-  description: "Our Spirits",
+  title: "Cart",
+  description: "Your Cart",
 };
 export const viewport = {
   width: "device-width",

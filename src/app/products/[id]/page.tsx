@@ -1,18 +1,37 @@
-
-import { fetchProductById } from "@/app/lib/fetch";
+import { productBySlugQuery } from "@/app/lib/queries";
+import {client} from "@/app/lib/sanity";
 import { oswald } from "@/app/ui/fonts";
-import { Oswald } from "next/font/google";
 import { Add } from "@/app/ui/products/addToCart";
+import { urlFor } from "@/app/lib/image";
 
+
+export  async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const { id } = await params
+
+  const product = await client.fetch(productBySlugQuery, {
+    id,
+  })
+
+  return {
+    title: `${product.name} | Virago Spirits`,
+    description: product.shortDescription,
+  };
+}
 
 export default async function ProductDetails({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: string }>
 }) {
-  const { id } = await params;
+  const { id } = await params
 
-  const product = await fetchProductById(id);
+  const product = await client.fetch(productBySlugQuery, {
+    id,
+  })
 
   if (!product) {
     return (
@@ -27,7 +46,7 @@ export default async function ProductDetails({
     <div className="p-6 pt-10 lg:pt-20 text-white/80 grid md:grid-cols-2 min-h-screen gap-4">
       <div className="w-full h-[400px] lg:w-[35vw]">
         <img
-          src={product.image}
+          src={urlFor(product.image).width(600).url()}
           alt={product.name}
           className="w-full h-full object-contain"
         />

@@ -3,7 +3,7 @@ import { TrashIcon } from "@heroicons/react/24/outline"
 import { useEffect, useState } from "react";
 import { useAppContext } from "@/app/context/userContext";
 type Product = {
-  id: string;
+  slug: string;
   name: string;
   price: number;
   image: string;
@@ -14,7 +14,7 @@ export function Remove({ product }: { product: Product }){
       const { cart,setCart } = useAppContext();
 
 function handleRemove(item: Product){
-const filter = cart?.filter(p => p.id !== product.id) || [];
+const filter = cart?.filter(p => p.slug !== product.slug) || [];
 setCart(filter);
 }
     return (<div className={`flex

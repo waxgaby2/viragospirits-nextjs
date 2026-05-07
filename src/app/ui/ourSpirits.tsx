@@ -2,15 +2,23 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
-import { inter } from "./fonts";
+import { inter } from "./fonts"
+import { productsQuery } from "../lib/queries";
+import {client} from "../lib/sanity";
+import { urlFor } from "../lib/image";
+
+export async function OurSpirits(){
+
+    const products = await client.fetch(productsQuery)
 
 
-export function OurSpirits(){
 return (
 <section className={`mb-5 text-black pb-20 
 text-sm bg-white/80
   pt-5
 w-full`}>
+
+
     <div><h2 className={`text-red-800/90 font-bold
     font-serif text-center mb-5`}>OUR SPIRITS</h2>
       <p className={`text-4xl text-black lg:text-6xl
@@ -25,64 +33,43 @@ w-full`}>
       own unique flavour and story</span>
     </p>
     </div>
+
+
 <div className={`flex gap-6 px-5 lg:px-20 w-full lg:justify-between
 overflow-x-auto scroll-smooth ${inter.className}`}>
- <div className="lg:w-[20%] max-md:min-w-[300px] max-md:max-w-[300px] max-md:flex-shrink-0">
+ 
+ 
+ {products.map((product:any,i:number)=>{
+
+if(!product.inStock){
+  return
+}
+if(i>3){
+  return;
+}
+  return (
+    <div key={product._id} className="lg:w-[20%] h-100 lg:h-130 flex flex-col justify-end">
     <div className="h-100 w-auto flex justify-center items-end">
-        <Image src="/images/Virago-White+Rum-Bottle.webp"
+        <Image src={urlFor(product.image).width(600).url()}
     width={200}
     height={600} 
-    alt="premium white rum"
-    className="object-contain h-full w-auto" />
+    alt={product.name}
+    className="object-contain h-50 w-auto lg:h-70 lg:w-auto" />
     
     </div>
-    <h3 className="font-bold">PREMIUM WHITE RUM</h3>
+    <h3 className="font-bold">{product.name.toUpperCase()}</h3>
   <p className="text-sm lg:text-md">
-    Lush notes of honeydew and ripened pear perfectly
-        balanced with just the right amount of ester-y 
-        funk...
+    {product.description.length>50?product.description.slice(0,49)+'...':product.description}
     </p>
-   <Link href="/" className="group flex items-center mt-4 hover:text-red-800/90">
+   <Link href={`/products/${product.slug}`} className="group flex items-center mt-4 hover:text-red-800/90">
   LEARN MORE
   <ArrowLongRightIcon className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-2" />
 </Link>
     </div> 
-     <div className="lg:w-[20%] max-md:min-w-[300px] max-md:max-w-[300px] max-md:flex-shrink-0">
-    <div className="h-100 w-auto items-end flex justify-center">
-        <Image src="/images/Virago-Spirits-Cognac-Cask-Rum.webp" 
-     width={200}
-    height={600} 
-    alt="premium white rum"
-    className="object-contain h-full w-auto"  />
-  </div>
-    <h3 className="font-bold">COGNAC CASK FINISHED RUM</h3>
-    <p className="text-sm lg:text-md">
-        Lush aromas of apricot preserve, warm toffee, and honeysuckle harmiously
-         blend with flavors of aged cognac...
-    </p>
-   <Link href="/" className="group flex items-center mt-4 hover:text-red-800/90">
-  LEARN MORE
-  <ArrowLongRightIcon className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-2" />
-</Link>
-    </div> 
-
-     <div className="lg:w-[20%] max-md:min-w-[300px] max-md:max-w-[300px] max-md:flex-shrink-0">
-    <div className="h-100 w-auto flex justify-center items-end">
-          <Image src="/images/Virago-Modern-Gin-2.webp" 
-     width={200}
-    height={600} 
-    alt="premium white rum"
-    className="object-contain h-full w-auto" /></div>
-    <h3 className="font-bold">MODERN GIN WITH OOLONG TEA</h3>
-<p className="text-sm lg:text-md">
-        Carefully distilled from a unique blend of botanicals,
-        including juniper, coriander, Szechuan peppercorn...
-    </p>
-    <Link href="/" className="group flex items-center mt-4 hover:text-red-800/90">
-  LEARN MORE
-  <ArrowLongRightIcon className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-2" />
-</Link>
-    </div>   
+  )
+})}
+ 
+       
 </div>
 <div className={`flex justify-center my-5`}>
   <Link href="/products"

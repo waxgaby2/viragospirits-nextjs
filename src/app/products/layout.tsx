@@ -7,8 +7,8 @@ import { Header } from "../ui/header";
 
 
 export const metadata: Metadata = {
-  title: "Virago Spririts Products",
-  description: "Our Spirits",
+  title: "Spirits",
+  description: "View Our Spirits",
 };
 export const viewport = {
   width: "device-width",

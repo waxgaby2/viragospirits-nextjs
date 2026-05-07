@@ -2,36 +2,79 @@
 
 import { useEffect, useState } from "react";
 import { useAppContext } from "@/app/context/userContext";
-import { fetchProductById } from "@/app/lib/fetch";
-import { ProductCard } from "../products/productCard";
 import Image from "next/image";
 import { Quantity } from "../products/addToCart";
 import { inter, oswald } from "../fonts";
 import { Remove } from "../products/removeProduct";
 import Link from "next/link";
+import { cartProduct } from "@/app/lib/queries";
+import {client} from "@/app/lib/sanity";
+import { urlFor } from "@/app/lib/image";
+
+
 export function ShowCart() {
-  const { cart } = useAppContext();
+  const { cart,setCart } = useAppContext();
   const [products, setProducts] = useState<any[]>([]);
 const[loading,setLoading]=useState<boolean>(true);
-  useEffect(() => {
-    async function loadProducts() {
-      if (!cart) return;
+ 
 
- const results = await Promise.all(
-  cart.map(async (p) => {
-    const product = await fetchProductById(p.id);
-    return {
-      ...product,
-      quantity: p.quantity,
-    };
-  })
-);
-setLoading(false)
-      setProducts(results);
+useEffect(() => {
+  async function loadProducts() {
+    if (!cart?.length) {
+      setProducts([]);
+      setLoading(false);
+      return;
     }
 
-    loadProducts();
-  }, [cart]);
+    try {
+     if (products.length > 0) {
+        setProducts((prev) =>
+          prev.map((product) => {
+            const cartItem = cart.find(
+              (item) => item.slug === product.slug
+            );
+
+            return {
+              ...product,
+              quantity: cartItem?.quantity || 1,
+            };
+          })
+        );
+
+        return;
+      }
+
+      setLoading(true);
+
+      const slugs = cart.map((p) => p.slug);
+
+      const fetchedProducts = await client.fetch(
+        cartProduct,
+        { slugs }
+      );
+
+      const results = fetchedProducts.map((product: any) => {
+        const cartItem = cart.find(
+          (item) => item.slug === product.slug
+        );
+
+        return {
+          ...product,
+          quantity: cartItem?.quantity || 1,
+        };
+      });
+
+      setProducts(results);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  loadProducts();
+}, [cart]);
+
 if(loading){
     return (
         <div className="flex justify-center items-center w-full h-screen">
@@ -50,16 +93,28 @@ if(!cart || cart?.length<1){
      w-full flex flex-col lg:flex-row p-3 lg:p-6 `}>
       
         <div className="w-full hidden  lg:w-[68%] gap-4 lg:flex flex-col">
-     <h2 className="font-bold text-2xl text-white/80">Your Carts ({products.length} items)</h2>
-      {products.map((product, i) => (
-        <div key={i} className={`flex lg:h-50 w-full gap-2
+    <div className="flex justify-between">
+<h2 className={`${oswald.className} text-white/70 ml-2 pt-5 text-center text-lg lg:text-3xl`}>Your Cart ({cart?.length} item{cart&&cart?.length>1 ?'s':""})</h2>
+   <button
+  onClick={() => {
+    setCart([])
+    localStorage.removeItem("cart")
+  }}
+  className={`${oswald.className} cursor-pointer
+   text-red-700 pt-5 text-center text-md 
+   lg:text-2xl mr-2`}
+>
+  Clear Cart
+</button></div>
+ {products.map((product:any, i) => (
+        <div key={product._id} className={`flex lg:h-50 w-full gap-2
             rounded-lg shadow-[0_0_5px_1px_rgba(0,0,0,0.3)]
             justify-center 
             lg:justify-between flex-col lg:flex-row
              p-3 bg-white/80`}>
          <div className={`m-auto w-[50%] lg:h-auto lg:w-[22%]
           rounded-md flex justify-center items-center`}> 
-            <Image  src={product.image}
+            <Image  src={urlFor(product.image).width(300).url()}
           alt={product.name}
           width={50}
           height={50}
@@ -84,10 +139,23 @@ if(!cart || cart?.length<1){
       ))}
     </div>
 
+
+
   <div className="w-full lg:hidden gap-1 flex flex-col">
-     <h2 className="text-lg mb-5 text-white/80">Your Carts ({products.length} items)</h2>
-      {products.map((product, i) => (
-        <div key={i} className={`flex w-full
+   <div className="flex justify-between">
+<h2 className={`${oswald.className} text-white/70 ml-2 pt-5 text-center text-lg lg:text-3xl`}>Your Cart ({cart?.length} item{cart&&cart?.length>1 ?'s':""})</h2>
+   <button
+  onClick={() => {
+    setCart([])
+    localStorage.removeItem("cart")
+  }}
+  className={`${oswald.className} cursor-pointer
+   text-red-700 pt-5 text-center text-md 
+   lg:text-2xl mr-2`}
+>
+  Clear Cart
+</button></div>  {products.map((product:any, i) => (
+        <div key={product._id} className={`flex w-full
             shadow-[0_0_5px_1px_rgba(0,0,0,0.3)]
             justify-between flex-col
              p-3 bg-white/80`}>
@@ -96,7 +164,7 @@ if(!cart || cart?.length<1){
           h-25
           rounded-md flex 
           justify-center items-center`}> 
-            <Image  src={product.image}
+            <Image  src={urlFor(product.image).width(300).url()}
           alt={product.name}
           width={50}
           height={50}
@@ -176,28 +244,67 @@ type CartMenuProps = {
 
 
 export function CartMenu({ open,setOpen }: CartMenuProps){
-    const { cart } = useAppContext();
+    const { cart,setCart } = useAppContext();
   const [products, setProducts] = useState<any[]>([]);
 const[loading,setLoading]=useState<boolean>(true);
-  useEffect(() => {
-    async function loadProducts() {
-      if (!cart) return;
+ 
 
- const results = await Promise.all(
-  cart.map(async (p) => {
-    const product = await fetchProductById(p.id);
-    return {
-      ...product,
-      quantity: p.quantity,
-    };
-  })
-);
-setLoading(false)
-      setProducts(results);
+useEffect(() => {
+  async function loadProducts() {
+    if (!cart?.length) {
+      setProducts([]);
+      setLoading(false);
+      return;
     }
 
-    loadProducts();
-  }, [cart]);
+    try {
+      if (products.length > 0) {
+        setProducts((prev) =>
+          prev.map((product) => {
+            const cartItem = cart.find(
+              (item) => item.slug === product.slug
+            );
+
+            return {
+              ...product,
+              quantity: cartItem?.quantity || 1,
+            };
+          })
+        );
+
+        return;
+      }
+
+      setLoading(true);
+
+      const slugs = cart.map((p) => p.slug);
+
+      const fetchedProducts = await client.fetch(
+        cartProduct,
+        { slugs }
+      );
+
+      const results = fetchedProducts.map((product: any) => {
+        const cartItem = cart.find(
+          (item) => item.slug === product.slug
+        );
+
+        return {
+          ...product,
+          quantity: cartItem?.quantity || 1,
+        };
+      });
+
+      setProducts(results);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  loadProducts();
+}, [cart]);
 
    useEffect(() => {
     if (open) {
@@ -223,11 +330,23 @@ onClick={()=>setOpen(!open)}
     w-[70%] lg:w-[500px] h-screen 
     ${open?'opacity-100 right-0':'right-[-1000px] opacity-0'}
     fixed top-0 transition-all duration-500 ease-in-out`}>
-<h2 className={`${oswald.className} pt-5 text-center text-lg lg:text-3xl`}>Your Cart ({cart?.length} item{cart&&cart?.length>1 ?'s':""})</h2>
+<div className="flex justify-between">
+<h2 className={`${oswald.className} ml-2 pt-5 text-center text-lg lg:text-3xl`}>Your Cart ({cart?.length} item{cart&&cart?.length>1 ?'s':""})</h2>
+   <button
+  onClick={() => {
+    setCart([])
+    localStorage.removeItem("cart")
+  }}
+  className={`${oswald.className} cursor-pointer
+   text-red-700 pt-5 text-center text-md 
+   lg:text-2xl mr-2`}
+>
+  Clear Cart
+</button></div>
     <div className={`mt-5`}>
-{products.map((product,i)=>{
+{products.map((product:any,i)=>{
   return (
-    <div key={product.id}
+    <div key={product._id}
     className={`w-full h-30 flex border-b
     border-black/30 
     transform transition-all duration-500
@@ -238,7 +357,7 @@ onClick={()=>setOpen(!open)}
               transitionDelay: `${i * 110}ms`,
             }}>
      <div className="h-full w-[15%] flex justify-center items-center">
-<Image src={product.image}
+<Image src={urlFor(product.image).width(300).url()}
      width={50} alt={product.name}
      height={50} 
      className="object-contain pr-1"

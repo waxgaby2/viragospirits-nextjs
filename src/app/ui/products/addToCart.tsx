@@ -5,7 +5,7 @@ import { useAppContext } from "@/app/context/userContext";
 
 
 type CartItem = {
-  id: string;
+  slug: string;
   quantity: number;
 };
 
@@ -23,17 +23,17 @@ setPrice(prev => product.price * number)
 function handleAdd(){
   if (!cart) return;
 
-const existing = cart.find(item => item.id === product.id);
+const existing = cart.find(item => item.slug === product.slug);
 
 if (existing) {
   const updated = cart.map(item =>
-    item.id === product.id
+    item.slug === product.slug
       ? { ...item, quantity: item.quantity + number }
       : item
   );
   setCart(updated);
 } else {
-  setCart([...cart, { id: product.id, quantity: number }]);
+  setCart([...cart, { slug: product.slug, quantity: number }]);
 }
 }
 
@@ -86,17 +86,17 @@ const {cart,setCart}=useAppContext();
 function handleAdd(){
   if (!cart) return;
 
-const existing = cart.find(item => item.id === product.id);
+const existing = cart.find(item => item.slug === product.slug);
 
 if (existing) {
   const updated = cart.map(item =>
-    item.id === product.id
+    item.slug === product.slug
       ? { ...item, quantity: item.quantity + 1 }
       : item
   );
   setCart(updated);
 } else {
-  setCart([...cart, { id: product.id, quantity: number }]);
+  setCart([...cart, { slug: product.slug, quantity: number }]);
 }
 }
 
@@ -105,17 +105,17 @@ if (existing) {
 function handleSubtract(){
   if (!cart) return;
 
-const existing = cart.find(item => item.id === product.id);
+const existing = cart.find(item => item.slug === product.slug);
 
 if (existing) {
   const updated = cart.map(item =>
-    item.id === product.id
+    item.slug === product.slug
       ? { ...item, quantity: item.quantity - 1 }
       : item
   );
   setCart(updated);
 } else {
-  setCart([...cart, { id: product.id, quantity: number }]);
+  setCart([...cart, { slug: product.slug, quantity: number }]);
 }
 }
 

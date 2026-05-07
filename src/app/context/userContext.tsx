@@ -3,8 +3,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 type CartItem = {
-  id: string;
   quantity: number;
+  slug:string;
 };
 
 type UserContextType = {
