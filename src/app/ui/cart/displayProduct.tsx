@@ -258,23 +258,7 @@ useEffect(() => {
     }
 
     try {
-      if (products.length > 0) {
-        setProducts((prev) =>
-          prev.map((product) => {
-            const cartItem = cart.find(
-              (item) => item.slug === product.slug
-            );
-
-            return {
-              ...product,
-              quantity: cartItem?.quantity || 1,
-            };
-          })
-        );
-
-        return;
-      }
-
+     
       setLoading(true);
 
       const slugs = cart.map((p) => p.slug);
