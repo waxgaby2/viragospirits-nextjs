@@ -2,6 +2,7 @@
 import { TrashIcon } from "@heroicons/react/24/outline"
 import { useEffect, useState } from "react";
 import { useAppContext } from "@/app/context/userContext";
+import { luxuryToast } from "@/app/lib/sonnerToast";
 type Product = {
   slug: string;
   name: string;
@@ -16,6 +17,7 @@ export function Remove({ product }: { product: Product }){
 function handleRemove(item: Product){
 const filter = cart?.filter(p => p.slug !== product.slug) || [];
 setCart(filter);
+luxuryToast.success("Item removed")
 }
     return (<div className={`flex
      h-full lg:justify-center

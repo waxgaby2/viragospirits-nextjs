@@ -12,10 +12,10 @@ const [open,setOpen]=useState<boolean>(false)
 <button type="button" 
 aria-label="open cart menu"
 onClick={()=>setOpen(prev=>!prev)}>
-<ShoppingCartIcon className="text-white/80 w-8 h-8" />
+<ShoppingCartIcon className="text-white/80 w-6 h-6" />
 {cart?.length!==0 &&<div className={`bg-red-800/90 text-white/80
-font-bold
-text-[10px] w-5 h-5 absolute top-[-6px] right-0
+font-bold min-w-4 min-h-4
+text-[10px]  absolute top-[-6px] right-0
     flex justify-center items-center rounded-[100%]`}>
         <p>{totalItems}</p>
        </div>}

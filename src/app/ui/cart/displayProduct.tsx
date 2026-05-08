@@ -10,6 +10,7 @@ import Link from "next/link";
 import { cartProduct } from "@/app/lib/queries";
 import {client} from "@/app/lib/sanity";
 import { urlFor } from "@/app/lib/image";
+import { luxuryToast } from "@/app/lib/sonnerToast";
 
 
 export function ShowCart() {
@@ -27,23 +28,7 @@ useEffect(() => {
     }
 
     try {
-     if (products.length > 0) {
-        setProducts((prev) =>
-          prev.map((product) => {
-            const cartItem = cart.find(
-              (item) => item.slug === product.slug
-            );
-
-            return {
-              ...product,
-              quantity: cartItem?.quantity || 1,
-            };
-          })
-        );
-
-        return;
-      }
-
+    
       setLoading(true);
 
       const slugs = cart.map((p) => p.slug);
@@ -75,18 +60,22 @@ useEffect(() => {
   loadProducts();
 }, [cart]);
 
-if(loading){
-    return (
-        <div className="flex justify-center items-center w-full h-screen">
+if(loading && products.length===0){
+  return (<div className="flex justify-center items-center w-full h-screen">
   <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white" />
     </div>)
 }
+
+
+
 if(!cart || cart?.length<1){
      return (
         <div className="flex text-white justify-center items-center w-full h-screen">
  <p>Cart is empty</p>
     </div>) 
 }
+
+
   return (
     <div className={`${inter.className} lg:pt-25 
     pt-10 text-black justify-center lg:justify-between
@@ -94,14 +83,17 @@ if(!cart || cart?.length<1){
       
         <div className="w-full hidden  lg:w-[68%] gap-4 lg:flex flex-col">
     <div className="flex justify-between">
-<h2 className={`${oswald.className} text-white/70 ml-2 pt-5 text-center text-lg lg:text-3xl`}>Your Cart ({cart?.length} item{cart&&cart?.length>1 ?'s':""})</h2>
+<h2 className={`${oswald.className} text-white ml-2 pt-5 text-center text-lg lg:text-3xl`}>Your Cart ({cart?.length} item{cart&&cart?.length>1 ?'s':""})</h2>
    <button
   onClick={() => {
+    if(!cart) return;
+if(cart.length>0){
     setCart([])
-    localStorage.removeItem("cart")
+    localStorage.removeItem("cart");
+    luxuryToast.success("Cart cleared")}
   }}
   className={`${oswald.className} cursor-pointer
-   text-red-700 pt-5 text-center text-md 
+   text-white/70 pt-5 text-center text-md 
    lg:text-2xl mr-2`}
 >
   Clear Cart
@@ -126,7 +118,7 @@ if(!cart || cart?.length<1){
           <p className="font-bold text-sm">$ {product.price}</p>
         </div>
         <div className="m-auto lg:w-[22%] flex flex-col justify-center items-center">
-<Quantity product={product} />
+<Quantity product={product} loading={loading} />
         </div>
         <div className="m-auto w-[22%] flex flex-col justify-center items-center">
             <p>Total</p>
@@ -143,21 +135,24 @@ if(!cart || cart?.length<1){
 
   <div className="w-full lg:hidden gap-1 flex flex-col">
    <div className="flex justify-between">
-<h2 className={`${oswald.className} text-white/70 ml-2 pt-5 text-center text-lg lg:text-3xl`}>Your Cart ({cart?.length} item{cart&&cart?.length>1 ?'s':""})</h2>
+<h2 className={`${oswald.className} text-white ml-2 pt-5 text-center text-lg lg:text-3xl`}>Your Cart ({cart?.length} item{cart&&cart?.length>1 ?'s':""})</h2>
    <button
   onClick={() => {
+     if(!cart) return;
+if(cart.length>0){
     setCart([])
-    localStorage.removeItem("cart")
+    localStorage.removeItem("cart");
+    luxuryToast.success("Cart cleared")}
   }}
   className={`${oswald.className} cursor-pointer
-   text-red-700 pt-5 text-center text-md 
+   text-white/70 pt-5 text-center text-md 
    lg:text-2xl mr-2`}
 >
   Clear Cart
 </button></div>  {products.map((product:any, i) => (
         <div key={product._id} className={`flex w-full
             shadow-[0_0_5px_1px_rgba(0,0,0,0.3)]
-            justify-between flex-col
+            justify-between flex-col rounded-md
              p-3 bg-white/80`}>
                 <div className="flex justify-between">
          <div className={` w-25
@@ -186,7 +181,7 @@ if(!cart || cart?.length<1){
         <div className="flex justify-between">
  <Remove product={product} />
 
- <Quantity product={product} />
+ <Quantity product={product} loading={loading} />
 
         </div>
        
@@ -316,17 +311,20 @@ onClick={()=>setOpen(!open)}
     fixed top-0 transition-all duration-500 ease-in-out`}>
 <div className="flex justify-between">
 <h2 className={`${oswald.className} ml-2 pt-5 text-center text-lg lg:text-3xl`}>Your Cart ({cart?.length} item{cart&&cart?.length>1 ?'s':""})</h2>
-   <button
+   {cart && cart.length>0 &&<button
   onClick={() => {
+    if(!cart) return;
+if(cart.length>0){
     setCart([])
-    localStorage.removeItem("cart")
+    localStorage.removeItem("cart");
+    luxuryToast.success("Cart cleared")}
   }}
   className={`${oswald.className} cursor-pointer
    text-red-700 pt-5 text-center text-md 
    lg:text-2xl mr-2`}
 >
   Clear Cart
-</button></div>
+</button>}</div>
     <div className={`mt-5`}>
 {products.map((product:any,i)=>{
   return (
@@ -380,13 +378,14 @@ ${oswald.className}
     </p>
 </div>
 </div>
-     <div className="flex justify-center mt-10 items-center">
+      {cart && cart.length>0 &&<div className="flex justify-center mt-10 items-center">
     <Link href="/cart" className={`bg-black/80
      text-white py-4 px-10 
      active:scale-95
     rounded m-auto hover:bg-black/90 transition
     duration-300 ease-in-out`}>Proceed to cart</Link>
-   </div>
+   </div>}
+
     </div>
    </>
   )
