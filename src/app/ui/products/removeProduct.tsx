@@ -11,13 +11,14 @@ type Product = {
 };
 
 
-export function Remove({ product }: { product: Product }){
+export function Remove({ product, loading }: { product: Product,loading:boolean }){
       const { cart,setCart } = useAppContext();
 
 function handleRemove(item: Product){
 const filter = cart?.filter(p => p.slug !== product.slug) || [];
 setCart(filter);
-luxuryToast.success("Item removed")
+if(loading===false){
+luxuryToast.success("Item removed")}
 }
     return (<div className={`flex
      h-full lg:justify-center
@@ -26,7 +27,7 @@ luxuryToast.success("Item removed")
 className="cursor-pointer m-6 ml-0 mb-0"
 onClick={()=>handleRemove((product))}>
 <TrashIcon className={`w-6 h-6 lg:w-7 lg:h-7
- active:scale-95 text-red-800/90
+ active:scale-95 text-red-500
  hover:text-gray-400 transition`} />
 </button>
     </div>)

@@ -6,7 +6,6 @@ import { luxuryToast } from "@/app/lib/sonnerToast";
 import Spinner from "../loader/spinner";
 
 
-
 type CartItem = {
   product:{
   slug: string;
@@ -89,41 +88,123 @@ if(existing){
 }
 
 
+return (
+  <div
+    className="
+      rounded-[2rem]
+      border border-white/10
+      bg-white/5 p-5
+      backdrop-blur-md 
+        text-neutral-900
+      shadow-[0_10px_35px_rgba(0,0,0,0.2)]
+    "
+  >
+    
+    <p
+      className={`
+        mb-4 text-[12px]
+        font-semibold uppercase
+        tracking-[0.35em]
+        text-neutral-900
+        ${oswald.className}
+      `}
+    >
+      Quantity
+    </p>
 
-    return (
-    <div className=" p-1">
-        
-<p className={`text-[14px] mb-3 font-bold ${oswald.className} tracking-widest`}>QUANTITY</p>
- <div className="flex mb-3">
-    <button type="button" aria-label="remove one quantity"
-    className={`w-10 h-10 p-3 bg-red-800/90 rounded-lg flex
-    text-white active:bg-white
-      active:text-black hover:scale-105 transition
-      duration-300 ease active:shadow-[0_0_2px_2px_rgba(255,255,255,0.2)]
-    justify-center items-center active:scale-95`}
-    onClick={()=>{setNumber(prev => prev === 1 ? 1 : prev -1
-    )}}>-</button>
-   <div className="md:w-[70%] w-full lg:w-[20%] h-10 flex justify-center items-center">
-    <p>{number}</p></div>
-     <button type="button" aria-label="add one quantity"
-     className={`w-10 h-10 p-3  rounded-lg text-white
-      flex justify-center items-center 
-     hover:scale-105 transition
-      duration-300 ease ${handleDisable(product)?"cursor-not-allowed bg-gray-400":"bg-red-800/90 active:scale-95 active:bg-white active:shadow-[0_0_2px_2px_rgba(255,255,255,0.2)] active:text-black"}`}
-      onClick={()=>{setNumber(prev => prev+1)}}
-      disabled={handleDisable(product)}
-      >+</button>
-      </div>
-      <button className={` text-white px-6 py-3 
-       rounded-lg  hover:scale-105 transition
+  
+    <div
+      className="
+        mb-5 flex items-center
+        rounded-full border
+        border-white/10
+        bg-white/10 p-2
+        backdrop-blur-sm
+      "
+    >
+     
+      <button
+        type="button"
+        aria-label="remove one quantity"
+        className="
+          flex h-11 w-11
+          items-center justify-center
+          rounded-full
+          bg-red-800/90 text-xl
+          text-white
+          transition-all duration-300
+          hover:scale-105
+          hover:bg-red-700
+          active:scale-95
+          active:bg-white
+          active:text-black
+        "
+        onClick={() => {
+          setNumber((prev) =>
+            prev === 1 ? 1 : prev - 1
+          );
+        }}
+      >
+        -
+      </button>
+
       
-      duration-300 ease ${handleSubmit(product)?"cursor-not-allowed bg-gray-400":"acive:shadow-[0_0_2px_2px_rgba(255,255,255,0.2)] bg-red-800/90 active:scale-95 active:bg-whitactive:text-black"}`}
+      <div
+        className="
+          flex h-11 flex-1
+          items-center justify-center
+        "
+      >
+        <p className="text-lg font-semibold">
+          {number}
+        </p>
+      </div>
+
+      <button
+        type="button"
+        aria-label="add one quantity"
+        className={`
+          flex h-11 w-11
+          items-center justify-center
+          rounded-full text-xl
+          text-white transition-all
+          duration-300 active:scale-95
+          ${
+            handleDisable(product)
+              ? "cursor-not-allowed bg-gray-500"
+              : "bg-red-800/90 hover:scale-105 hover:bg-red-700 active:bg-white active:text-black"
+          }
+        `}
+        onClick={() => {
+          setNumber((prev) => prev + 1);
+        }}
+        disabled={handleDisable(product)}
+      >
+        +
+      </button>
+    </div>
+
+    <button
+      className={`
+        w-full rounded-full
+        px-6 py-4 text-sm
+        font-semibold uppercase
+        tracking-[0.25em]
+        text-white
+        transition-all duration-300
+        ${
+          handleSubmit(product)
+            ? "cursor-not-allowed bg-gray-500"
+            : "bg-red-800/90 hover:-translate-y-1 hover:bg-white hover:text-black active:scale-95"
+        }
+      `}
       disabled={handleSubmit(product)}
-      onClick={handleAdd}>
-          Add to cart
-        </button>
-</div>    
-    )
+      onClick={handleAdd}
+    >
+      Add To Cart
+    </button>
+  </div>
+);
 }
 
 
@@ -196,12 +277,12 @@ useEffect(()=>{
 
 
     return (
-    <div className="p-1 w-full h-full flex flex-col items-center justify-center">
+    <div className="p-1 w-full h-full flex flex-col">
         
-<p className={`text-sm lg:text-[14px] lg:mb-3 tracking-widest`}>Quantity</p>
+<p className={`text-sm lg:text-[14px] lg:mb-3 uppercase tracking-widest mb-5`}>Quantity</p>
  <div className="flex justify-between rounded-sm">
     <button key={product.slug} type="button" aria-label="remove one quantity"
-    className={`w-3 h-3 lg:w-5 lg:h-5 p-3 lg:p-4 rounded flex
+    className={`w-7 h-7 lg:w-9 lg:h-9 p-3 lg:p-4 rounded flex
     text-white 
     bg-black/70 hover:bg-black/80
     cursor-pointer border border-black/70
@@ -220,7 +301,7 @@ useEffect(()=>{
    <div className="flex justify-center w-[100px] items-center">
     <p>{product.quantity}</p></div>
      <button type="button" aria-label="add one quantity"
-     className={`w-3 h-3 lg:w-5 lg:h-5 p-3 lg:p-4 rounded flex
+     className={`w-7 h-7 lg:w-9 lg:h-9 p-3 lg:p-4 rounded flex
     text-white 
     cursor-pointer border border-black/70
  
@@ -232,7 +313,7 @@ useEffect(()=>{
       }}
       disabled={handleDisable(product)}
       >
-  {item?.slug=== product.slug&&item?.type==="add" && loading ? (
+{item?.slug=== product.slug&&item?.type==="add" && loading ? (
     <Spinner />
   ) : (
     "+"

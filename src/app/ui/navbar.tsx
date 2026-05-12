@@ -22,11 +22,11 @@ export function NavBar() {
 
   const links = [
     {name:"Spirits", link:"/products"},
-    {name:"About Us", link:"/"},
-   {name:"Tasting Room", link:"/"}, 
-   {name:"Events", link:"/"} ,  
-   {name:"Where to buy", link:"/"} ,
-   {name:"Contact", link:"/"},
+    {name:"About Us", link:"/about"},
+   {name:"Tasting Room", link:"/tasting-room"}, 
+   {name:"Production Process", link:"/process"} ,  
+   {name:"Where to buy", link:"/where-to-buy"} ,
+   {name:"Contact", link:"/contact"},
   ]
 
   return (

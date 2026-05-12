@@ -6,8 +6,8 @@ export function StayInLoop() {
   const [email, setEmail] = useState("");
 
   return (
-    <section className={`w-full relative
-      text-sm lg:text-md mt-20 text-black
+    <section className={`w-full relative 
+      text-sm lg:text-md pt-20 text-black
      py-24 px-6 overflow-hidden`}>
 
       <div className="absolute inset-0" />

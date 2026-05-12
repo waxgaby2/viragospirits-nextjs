@@ -16,45 +16,92 @@ export function ProductCard({ product }: { product: Product }) {
 
 
   return (
-    
-    <div className={` m-2 rounded-2xl 
-        shadow-[0_0_8px_7px_rgba(255,255,255,0.1)]
-       text-bllack/80 active:scale-95
-hover:bg-white/80 text-black/90
-       hover:shadow-[0_0_10px_7px_rgba(255,255,255,0.3)]
-   active:bg-white/70
-     overflow-hidden transition-all duration-300 ease cursor-pointer
-     bg-white/80 p-5`}>
-<Link href={`/products/${product.slug}`} className="w-full h-full">
-      <div className="w-full h-50 flex justify-center items-center">
-        <Image
-            src={urlFor(product.image).width(600).url()}
-  width={400}
-  height={400}
-  alt={product.name}
-           
-          className="w-full h-full  object-contain hover:scale-105 transition"
-        />
-      </div>
+   <div
+  className="
+    group m-2 overflow-hidden
+    rounded-[2rem]
+    border border-white/10
+    bg-white/70 p-5
+    text-black/90
+    shadow-[0_10px_35px_rgba(0,0,0,0.12)]
+    backdrop-blur-md
+    transition-all duration-500 ease-out
+    hover:-translate-y-2
+    hover:bg-white/80
+    hover:shadow-[0_20px_45px_rgba(0,0,0,0.18)]
+    active:scale-[0.98]
+    cursor-pointer
+  "
+>
+  <Link
+    href={`/products/${product.slug}`}
+    className="flex h-full w-full flex-col"
+  >
+   
+    <div
+      className="
+        relative flex h-56 w-full
+        items-center justify-center
+        overflow-hidden rounded-[1.5rem]
+   
+      "
+    >
+      <div
+        className="
+          absolute inset-0 opacity-0
+          transition duration-500
+          group-hover:opacity-100
+        
+        "
+      />
 
-      <div className="p-4 space-y-2 flex flex-col items-center justify-between">
-        <h3 className="text-lg font-semibold text-center ">
+      <Image
+        src={urlFor(product.image).width(600).url()}
+        width={400}
+        height={400}
+        alt={product.name}
+        className="
+          relative z-10 h-full w-full
+          object-contain
+          transition duration-700
+          group-hover:scale-105
+        "
+      />
+    </div>
+
+    <div
+      className="
+        flex flex-1 flex-col
+        items-center justify-between
+        space-y-3 px-2 pb-2 pt-6
+      "
+    >
+      <div className="text-center">
+        <h3 className="text-xl font-semibold tracking-wide">
           {product.name}
         </h3>
 
-        <p className=" text-sm text-center ">
-          Premium quality product
-        </p>
-
-        <div className="">
-          <span className=" font-bold text-lg">
-            ${product.price}
-          </span>
-
-        </div>
+        <div className="mx-auto mt-3 h-[1px] w-12 bg-black/10"></div>
       </div>
-      </Link>
+
+      <p className="text-center text-sm leading-7 text-black/60">
+        Premium quality product
+      </p>
+
+      <div
+        className="
+          mt-2 rounded-full
+          bg-black px-6 py-2
+          text-white shadow-lg
+          transition duration-300
+          group-hover:bg-red-800
+        "
+      >
+        <span className="text-lg font-bold">
+          ${product.price}
+        </span>
+      </div>
     </div>
-    
-  );
+  </Link>
+</div>)
 }

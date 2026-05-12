@@ -1,4 +1,3 @@
-'use client'
 import { ShowCart } from "../ui/cart/displayProduct";
 
 export default function Page(){

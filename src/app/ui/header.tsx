@@ -26,27 +26,27 @@ className={`hover:text-gray-400
 transition-all duration-300
 ease-linear`}>Spirits</Link>
 
-<Link href="/"
+<Link href="/about"
 className={`hover:text-gray-400
 transition-all duration-300
 ease-linear`}>About Us</Link>
 
-<Link href="/"
+<Link href="/tasting-room"
 className={`hover:text-gray-400
 transition-all duration-300
 ease-linear`}>Tasting Room</Link>
 
-<Link href="/"
+<Link href="/process"
 className={`hover:text-gray-400
 transition-all duration-300
-ease-linear`}>Events</Link>
+ease-linear`}>Production Process</Link>
 
-<Link href="/"
+<Link href="/where-to-buy"
 className={`hover:text-gray-400
 transition-all duration-300
 ease-linear`}>Where to buy</Link>
 
-<Link href="/"
+<Link href="/contact"
 className={`hover:text-gray-400
 transition-all duration-300
 ease-linear`}>Contact</Link>

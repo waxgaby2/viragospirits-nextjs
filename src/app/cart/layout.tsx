@@ -23,8 +23,8 @@ export default function RootLayout({
   return (
     <>
            <Header />
-      <div className={`min-h-full pb-20
-        bg-gradient-to-br from-neutral-900 via-neutral-950 to-black ${inter.className}`}>{children}</div>
+      <div className={`min-h-full pb-20 bg-[#f7f3ee] text-neutral-900
+        ${inter.className}`}>{children}</div>
 
            <Footer />
 </>

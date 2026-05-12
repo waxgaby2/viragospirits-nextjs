@@ -7,124 +7,182 @@ import { CalendarDaysIcon } from '@heroicons/react/24/outline';
 
 export function VisitUs(){
 return (
-<section className={`w-[95vw] m-auto
-shadow-[0_0_15px_8px_rgba(0,0,0,0.5)]
-py-7 text-sm lg:text-md
-rounded-3xl text-white/80
-bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950
-relative`}>
-        <div className={`w-full flex justify-between p-3`}>
-        <div className={`lg:w-[50%]  py-5 px-3
+<section
+  className="
+    relative mx-auto w-[95%] max-w-7xl overflow-hidden
+    rounded-[2.5rem] border border-white/10
+    bg-gradient-to-br from-neutral-900 via-black to-neutral-950
+    py-16 text-white shadow-[0_0_40px_rgba(0,0,0,0.45)]
+    lg:py-24
+  "
+>
+  <div className="absolute inset-0 opacity-20">
+    <div className="absolute left-[-10%] top-0 h-72 w-72 rounded-full bg-red-900 blur-3xl"></div>
+    <div className="absolute bottom-[-10%] right-[-10%] h-80 w-80 rounded-full bg-neutral-700 blur-3xl"></div>
+  </div>
 
-    lg:pl-20 lg:py-3`}>
-<h2 className="font-bold font-serif">VISIT US</h2>
+  <div className="relative z-10 grid gap-20 px-5 lg:grid-cols-2 lg:px-16">
+    
+    <div className="flex flex-col justify-center">
+      <p className="mb-4 text-sm uppercase tracking-[0.35em] text-white/40">
+        Visit Us
+      </p>
 
-<h3 className="font-serif text-4xl mt-10 ">Come For The Mead.</h3>
-  <h3 className="font-serif text-4xl">Stay For The Experience.</h3>
-  <Image src="/images/tastingroom.webp"
-       alt="picture of our tasting room"
-       width={500}
-       height={300}
-       className={`w-full h-auto mt-5
-         lg:hidden pb-3 pt-8 m-auto
-        shadow-[0px_0px_13px_5px_rgba(0,0,0,0.7)]`} /> 
- 
- <p className={`lg:text-md pt-10 lg:pr-10 ${inter.className}`}>
-   Step into our Tasting Room and discover a space that
-    blends modern craft with timeless character. Our
-     cocktail bar showcases seasonally inspired creations
-      served in elegant vintage glassware, highlighting 
-      the artistry of our rums, gins, brandies, and 
-      liqueurs. With a speakeasy-inspired feel, warm 
-      lighting, and a mural celebrating historical 
-      Viragos by one of Richmond’s most celebrated 
-      artists, the atmosphere invites you to slow down
-       and savor every sip. Whether you’re here for a 
-       cocktail, a tasting flight, a seasonal release, or 
-       simply to unwind with friends, the Tasting Room 
-       offers an 
-   experience that is equal parts refined and welcoming.
- </p>
+      <h2 className="font-serif text-4xl leading-tight lg:text-6xl">
+        Come For The Mead.
+      </h2>
 
-        <div className={`lg:w-[50%] lg:pr-10 scale-105 hidden
-        absolute lg:flex z-10 -top-15 right-0 
-       `}>
-       <Image src="/images/tastingroom.webp"
-       alt="picture of our tasting room"
-       width={500}
-       height={300}
-       className={`object-contain h-full w-full
-        rounded-md
-        shadow-[0px_0px_13px_5px_rgba(0,0,0,0.7)]`} /> 
-        
-        </div>
-        <div className={`lg:w-[22%] lg:pr-10 scale-105 hidden
-        absolute lg:flex z-10 bottom-98 right-0 
-       `}>
-       <Image src="/images/tasting-room-5.webp"
-       alt="picture of our tasting room"
-       width={300}
-       height={500}
-       className={`object-contain h-full w-full
-        rounded-md
-        shadow-[0px_0px_13px_5px_rgba(0,0,0,0.7)]`} /> 
-        
-        </div>
-          <div className={`lg:w-[22%] lg:pr-10 scale-105 hidden
-        absolute lg:flex z-10 bottom-98 right-90 
-       `}>
-       <Image src="/images/tasting-room-2.jpg"
-       alt="picture of our tasting room"
-       width={300}
-       height={500}
-       className={`object-contain h-full w-full
-        rounded-md
-        shadow-[0px_0px_13px_5px_rgba(0,0,0,0.7)]`} /> 
-        
-        </div>
-        
-     </div>
-        </div>
-       <Image src="/images/tasting-room-2.jpg"
-       alt="picture of our tasting room"
-       width={300}
-       height={500}
-       className={` lg:hidden pb-3 pt-8 m-auto
-          h-full w-auto mt-2
-        shadow-[0px_0px_13px_5px_rgba(0,0,0,0.7)]`} /> 
-         <Image src="/images/tasting-room-5.webp"
-       alt="picture of our tasting room"
-       width={300}
-       height={500}
-       className={` lg:hidden pb-3 pt-8 m-auto
-        h-full w-auto mt-2
-        shadow-[0px_0px_13px_5px_rgba(0,0,0,0.7)]`} /> 
-         <div className={`mt-10 w-full text-red-800/90 
-            flex flex-col lg:justify-evenly lg:flex-row justify-center 
-            items-center ${oswald.className} tracking-wide`}>
- <div className={` lg:w-[25%] w-[70%] md:w-[50%]
- flex flex-col bg-white/80 p-5 md:h-[350px] h-[250px]
-   justify-center items-center rounded-2xl
-  shadow-[0_0_15px_8px_rgba(0,0,0,0.5)]`}>
-<MapPinIcon className="w-10 h-10 lg:w-15 lg:h-15 animate-[bounce_2s_infinite]" />
-<div className="mx-4 mt-5"><p>1727, Rhoadmiller St.</p>
-<p>Richmond, Virginna 23220</p></div>
- </div>
-  <div className={` lg:w-[25%] w-[70%] mt-10
-  md:w-[50%]
- flex flex-col bg-white/80 lg:m-4 p-5 md:h-[350px]
-  justify-center items-center rounded-2xl h-[250px]
-  shadow-[0_0_15px_8px_rgba(0,0,0,0.5)]`}>  
-  <CalendarDaysIcon className="w-10 h-10 lg:w-15 lg:h-15 animate-[bounce_2s_infinite]" />
-  <div className="mx-4 mt-5"><p>
-WED - FRI | 4PM - 9:30PM</p>
-<p>
-SAT | 2PM - 9:30PM</p>
-<p>
-SUN | 2PM - 6:30PM</p></div>
-</div>
-</div>
-        
-    </section>
+      <h2 className="font-serif text-4xl leading-tight text-red-400/90 lg:text-6xl">
+        Stay For The Experience.
+      </h2>
+
+      <div className="my-8 h-[1px] w-24 bg-white/20"></div>
+
+      <Image
+        src="/images/tastingroom.webp"
+        alt="Virago tasting room"
+        width={700}
+        height={500}
+        className="
+          mb-10 rounded-3xl object-cover shadow-2xl
+          lg:hidden m-auto
+        "
+      />
+
+      <p
+        className={`max-w-2xl text-sm leading-8 text-white/70 lg:text-base ${inter.className}`}
+      >
+        Step into our Tasting Room and discover a space that blends
+        modern craft with timeless character. Our cocktail bar showcases
+        seasonally inspired creations served in elegant vintage
+        glassware, highlighting the artistry of our rums, gins,
+        brandies, and liqueurs.
+      </p>
+
+      <p
+        className={`mt-6 max-w-2xl text-sm leading-8 text-white/70 lg:text-base ${inter.className}`}
+      >
+        With a speakeasy-inspired atmosphere, warm lighting, and a
+        mural celebrating historical Viragos, the experience invites
+        you to slow down, savor every sip, and enjoy unforgettable
+        moments with friends and family.
+      </p>
+    </div>
+
+    <div className="relative hidden w-100% lg:block">
+      
+      <div className="absolute right-0 top-10  w-full">
+        <Image
+          src="/images/tastingroom.webp"
+          alt="Virago tasting room"
+          width={700}
+          height={500}
+          className="w-full h-auto
+           
+            shadow-[0_20px_60px_rgba(0,0,0,0.6)]
+          "
+        />
+      </div>
+
+      <div className="absolute bottom-16 left-0 w-[45%]">
+        <Image
+          src="/images/tasting-room-2.jpg"
+          alt="Cocktail interior"
+          width={350}
+          height={500}
+          className="
+            rounded-[1.5rem] object-cover
+            shadow-[0_20px_50px_rgba(0,0,0,0.5)]
+          "
+        />
+      </div>
+      <div className="absolute bottom-0 right-8 w-[45%]">
+        <Image
+          src="/images/tasting-room-5.webp"
+          alt="Virago seating area"
+          width={350}
+          height={500}
+          className="
+            rounded-[1.5rem] object-cover
+            shadow-[0_20px_50px_rgba(0,0,0,0.5)]
+          "
+        />
+      </div>
+    </div>
+  </div>
+
+  <div className="relative z-10 mt-10 flex flex-col justify-center items-center gap-6 px-5 lg:hidden">
+    <Image
+      src="/images/tasting-room-2.jpg"
+      alt="Cocktail interior"
+      width={500}
+      height={600}
+      className="rounded-3xl object-cover shadow-2xl"
+    />
+
+    <Image
+      src="/images/tasting-room-5.webp"
+      alt="Virago seating area"
+      width={500}
+      height={600}
+      className="rounded-3xl object-cover shadow-2xl"
+    />
+  </div>
+
+  <div
+    className={`
+      relative z-10 mt-24 grid gap-8
+      px-5 lg:grid-cols-2 lg:px-16
+      ${oswald.className}
+    `}
+  >
+    <div
+      className="
+        group flex flex-col items-center justify-center
+        rounded-[2rem] border border-white/10
+        bg-white/5 p-10 text-center
+        backdrop-blur-md transition duration-500
+        hover:-translate-y-2 hover:bg-white/10
+      "
+    >
+      <MapPinIcon
+        className="animate-bounce
+          h-12 w-12 text-red-400
+          transition duration-500 group-hover:scale-110
+          lg:h-16 lg:w-16
+        "
+      />
+
+      <div className="mt-6 space-y-2 text-lg tracking-wide text-white/80">
+        <p>1727 Rhoadmiller St.</p>
+        <p>Richmond, Virginia 23220</p>
+      </div>
+    </div>
+
+    <div
+      className="
+        group flex flex-col items-center justify-center
+        rounded-[2rem] border border-white/10
+        bg-white/5 p-10 text-center
+        backdrop-blur-md transition duration-500
+        hover:-translate-y-2 hover:bg-white/10
+      "
+    >
+      <CalendarDaysIcon
+        className=" animate-bounce
+          h-12 w-12 text-red-400
+          transition duration-500 group-hover:scale-110
+          lg:h-16 lg:w-16
+        "
+      />
+
+      <div className="mt-6 space-y-2 text-lg tracking-wide text-white/80">
+        <p>WED – FRI | 4PM – 9:30PM</p>
+        <p>SAT | 2PM – 9:30PM</p>
+        <p>SUN | 2PM – 6:30PM</p>
+      </div>
+    </div>
+  </div>
+</section>
 )
 }
