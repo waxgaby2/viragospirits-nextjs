@@ -12,12 +12,14 @@ export function Header() {
   const pathname = usePathname();
 
   const navLinks = [
+     { name: "Home", href: "/home" },
     { name: "Spirits", href: "/products" },
     { name: "About Us", href: "/about" },
     { name: "Tasting Room", href: "/tasting-room" },
     { name: "Production Process", href: "/process" },
     { name: "Where To Buy", href: "/where-to-buy" },
     { name: "Contact", href: "/contact" },
+     
   ];
 
   return (
@@ -61,7 +63,7 @@ export function Header() {
               {isActive && (
                 <div
                   className={`absolute left-1/2 top-7
-                  h-1 w-4 -translate-x-1/2
+                  h-0.5 w-4 -translate-x-1/2
                    bg-red-400`}
                 />
               )}

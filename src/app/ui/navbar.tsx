@@ -29,6 +29,7 @@ export function NavBar() {
   }, [isOpen])
 
   const links = [
+     { name: "Home", link: "/home" },
     { name: "Spirits", link: "/products" },
     { name: "About Us", link: "/about" },
     { name: "Tasting Room", link: "/tasting-room" },
@@ -39,7 +40,6 @@ export function NavBar() {
 
   return (
     <>
-      {/* MENU BUTTON */}
       <button
         type="button"
         aria-label="Toggle Nav Menu"
