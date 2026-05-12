@@ -79,11 +79,6 @@ This project helped me improve in:
 
 ---
 
-## 📸 Preview
-
-> Add screenshots or GIFs here for better presentation
-
----
 
 ## 📌 Future Improvements
 
