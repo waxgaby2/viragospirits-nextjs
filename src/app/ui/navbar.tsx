@@ -103,13 +103,7 @@ export function NavBar() {
             >
               {nav.name}
 
-              {isActive && (
-                <div
-                  className={`absolute right-0 top-1/2
-                  h-2 w-2 -translate-y-1/2
-                  rounded-full bg-red-400`}
-                />
-              )}
+            
             </Link>
           )
         })}

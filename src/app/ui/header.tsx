@@ -61,8 +61,8 @@ export function Header() {
               {isActive && (
                 <div
                   className={`absolute left-1/2 top-7
-                  h-1 w-1 -translate-x-1/2
-                  rounded-full bg-red-400`}
+                  h-1 w-4 -translate-x-1/2
+                   bg-red-400`}
                 />
               )}
             </Link>
