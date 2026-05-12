@@ -79,7 +79,7 @@ export function NavBar() {
         ))}
 
         <Link
-          href="/"
+          href="/tasting-room"
           onClick={() => setOpen(false)}
           className="mt-6 text-lg text-center py-4 bg-red-800/90 hover:bg-red-800 active:scale-95 transition rounded-md"
         >

@@ -52,7 +52,7 @@ transition-all duration-300
 ease-linear`}>Contact</Link>
 
 </div>
-<Link href="/"
+<Link href="/tasting-room"
 className={`m-auto py-3 px-8 hidden lg:flex
 hover:bg-white/80 hover:text-black 
 traansition-all text-[13px]

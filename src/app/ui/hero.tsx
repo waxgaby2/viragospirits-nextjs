@@ -98,29 +98,7 @@ export function Hero() {
           md:flex-row md:gap-7
         "
       >
-        <Link
-          href="/"
-          className="
-            group relative overflow-hidden
-            rounded-full
-            border border-white/20
-            bg-white px-10 py-5
-            text-center text-sm
-            font-semibold uppercase
-            tracking-[0.25em]
-            text-black
-            shadow-[0_10px_30px_rgba(255,255,255,0.15)]
-            transition-all duration-500
-            hover:-translate-y-1
-            hover:bg-red-800
-            hover:text-white
-            active:scale-95
-            md:w-70
-          "
-        >
-          Plan Your Visit
-        </Link>
-
+       
         <Link
           href="/products"
           className="
