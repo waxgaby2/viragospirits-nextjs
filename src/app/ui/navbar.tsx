@@ -29,7 +29,7 @@ export function NavBar() {
   }, [isOpen])
 
   const links = [
-     { name: "Home", link: "/home" },
+     { name: "Home", link: "/" },
     { name: "Spirits", link: "/products" },
     { name: "About Us", link: "/about" },
     { name: "Tasting Room", link: "/tasting-room" },

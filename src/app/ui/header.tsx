@@ -12,7 +12,7 @@ export function Header() {
   const pathname = usePathname();
 
   const navLinks = [
-     { name: "Home", href: "/home" },
+     { name: "Home", href: "/" },
     { name: "Spirits", href: "/products" },
     { name: "About Us", href: "/about" },
     { name: "Tasting Room", href: "/tasting-room" },
@@ -40,7 +40,7 @@ export function Header() {
         className={`${oswald.className}
         m-auto hidden h-full items-center
         justify-center gap-5 text-[15px]
-        font-[500] uppercase tracking-widest
+        font-light uppercase tracking-widest
         text-white/80 lg:flex`}
       >
         {navLinks.map((link) => {
