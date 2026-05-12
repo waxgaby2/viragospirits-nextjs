@@ -11,7 +11,10 @@ export default function Page(){
         <div>
         
            <ProductsHero />
-          
+           <h2 id="spirits" className={`font-serif text-2xl 
+           text-neutral-900 text-center pt-10
+           lg:text-3xl mt-10 tracking-wider
+           ml-4 lg:ml-10`}>Our Spirits</h2>
              <Suspense       
         fallback={<div className={`text-red-600 flex flex-col
          flex-wrap pb-5 pt-15 md:grid md:grid-cols-2 lg:grid-cols-3 gap-10

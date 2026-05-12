@@ -317,7 +317,7 @@ return (
         bg-white text-black
         shadow-[-10px_0_40px_rgba(0,0,0,0.2)]
         backdrop-blur-xl
-        pb-30 transition-all duration-500 ease-in-out
+        pb-30 transition-all duration-200 ease-in-out
         lg:w-[500px] lg:pb-5
         ${open ? "right-0 opacity-100" : "right-[-1000px] opacity-0"}
       `}
