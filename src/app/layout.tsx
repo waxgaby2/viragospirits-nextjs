@@ -6,7 +6,7 @@ import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Virago Spririts",
-  description: "Landing Page for a Meadery Website",
+  description: "Explore premium rum collections, tasting experiences, and modern spirit culture at Virago Spirits - crafted for bold taste and timeless moments.",
 };
 export const viewport = {
   width: "device-width",
