@@ -5,7 +5,7 @@ export default function Page(){
         <section className="w-full bg-[#f7f3ee] text-neutral-900 px-6 py-24">
   <div className="mx-auto max-w-6xl space-y-16">
 
-    <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
 
       <div className="space-y-6">
 
@@ -20,7 +20,7 @@ export default function Page(){
           </span>
         </h1>
 
-        <p className="text-neutral-600 leading-relaxed max-w-xl">
+        <p className="text-neutral-600 leading-relaxed">
           Discover Virago Spirits online, at the Richmond tasting room,
           or through select retailers and distributors across multiple states.
         </p>
@@ -126,7 +126,7 @@ export default function Page(){
 
     </div>
 
-    <div className="grid lg:grid-cols-2 gap-6">
+    <div className="grid md:grid-cols-2 gap-6">
 
       <div className="p-8 rounded-3xl bg-white border border-neutral-200 shadow-sm space-y-6">
 

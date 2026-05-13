@@ -23,7 +23,7 @@ return (
 
   <div className="relative z-10 grid gap-20 px-5 lg:grid-cols-2 lg:px-16">
     
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center md:px-10">
       <p className="mb-4 text-sm uppercase tracking-[0.35em] text-white/40">
         Visit Us
       </p>
@@ -50,7 +50,7 @@ return (
       />
 
       <p
-        className={`max-w-2xl text-sm leading-8 text-white/70 lg:text-base ${inter.className}`}
+        className={`text-sm md:px-5 leading-8 text-white/70 lg:text-base ${inter.className}`}
       >
         Step into our Tasting Room and discover a space that blends
         modern craft with timeless character. Our cocktail bar showcases
@@ -60,7 +60,7 @@ return (
       </p>
 
       <p
-        className={`mt-6 max-w-2xl text-sm leading-8 text-white/70 lg:text-base ${inter.className}`}
+        className={`mt-6  md:px-5 text-sm leading-8 text-white/70 lg:text-base ${inter.className}`}
       >
         With a speakeasy-inspired atmosphere, warm lighting, and a
         mural celebrating historical Viragos, the experience invites

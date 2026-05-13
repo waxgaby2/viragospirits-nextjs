@@ -90,19 +90,16 @@ if(existing){
 
 return (
   <div
-    className="
-      rounded-[2rem]
+    className={`rounded-[2rem]
       border border-white/10
       bg-white/5 p-5
       backdrop-blur-md 
         text-neutral-900
       shadow-[0_10px_35px_rgba(0,0,0,0.2)]
-    "
-  >
+    `}>
     
     <p
-      className={`
-        mb-4 text-[12px]
+      className={`mb-4 text-[12px]
         font-semibold uppercase
         tracking-[0.35em]
         text-neutral-900
@@ -114,20 +111,18 @@ return (
 
   
     <div
-      className="
-        mb-5 flex items-center
+      className={`mb-5 flex items-center
         rounded-full border
         border-white/10
         bg-white/10 p-2
-        backdrop-blur-sm
-      "
+        backdrop-blur-sm`}
+       
     >
      
       <button
         type="button"
         aria-label="remove one quantity"
-        className="
-          flex h-11 w-11
+        className={`flex h-11 w-11
           items-center justify-center
           rounded-full
           bg-red-800/90 text-xl
@@ -137,8 +132,9 @@ return (
           hover:bg-red-700
           active:scale-95
           active:bg-white
-          active:text-black
-        "
+          active:text-black`}
+        
+        
         onClick={() => {
           setNumber((prev) =>
             prev === 1 ? 1 : prev - 1
@@ -150,10 +146,9 @@ return (
 
       
       <div
-        className="
-          flex h-11 flex-1
-          items-center justify-center
-        "
+        className={`flex h-11 flex-1
+          items-center justify-center`}
+      
       >
         <p className="text-lg font-semibold">
           {number}
@@ -279,12 +274,11 @@ useEffect(()=>{
     return (
     <div className="p-1 w-full h-full flex flex-col">
         
-<p className={`text-sm lg:text-[14px] lg:mb-3 uppercase tracking-widest mb-5`}>Quantity</p>
  <div className="flex justify-between rounded-sm">
     <button key={product.slug} type="button" aria-label="remove one quantity"
     className={`w-7 h-7 lg:w-9 lg:h-9 p-3 lg:p-4 rounded flex
     text-white 
-    bg-black/70 hover:bg-black/80
+    bg-red-900 hover:bg-black/80
     cursor-pointer border border-black/70
    active:bg-white active:text-black/70
       transition-all duration-100 ease
@@ -298,7 +292,7 @@ useEffect(()=>{
     "-"
   )}
       </button>
-   <div className="flex justify-center w-[100px] items-center">
+   <div className="flex justify-center text-red-900 w-[100px] items-center">
     <p>{product.quantity}</p></div>
      <button type="button" aria-label="add one quantity"
      className={`w-7 h-7 lg:w-9 lg:h-9 p-3 lg:p-4 rounded flex
@@ -307,7 +301,7 @@ useEffect(()=>{
  
       transition-all duration-100 ease
     justify-center items-center 
-    ${handleDisable(product)? 'cursor-not-allowed bg-gray-400':"  hover:bg-black/80 bg-black/70  active:bg-white active:text-black/70"}`}
+    ${handleDisable(product)? 'cursor-not-allowed bg-gray-400':"  hover:bg-black/80 bg-red-900  active:bg-white active:text-black/70"}`}
       onClick={()=>{
        handleAdd();
       }}

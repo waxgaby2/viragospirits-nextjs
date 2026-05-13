@@ -7,7 +7,7 @@ import Link from "next/link";
 export function Story(){
     return (<section
   className={`
-    relative flex min-h-screen
+    relative flex 
     flex-col justify-center
     overflow-hidden
     bg-gradient-to-br

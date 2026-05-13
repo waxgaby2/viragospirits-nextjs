@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <>
            <Header />
-      <div className={`min-h-full pb-30
+      <div className={`min-h-full
           bg-[#f7f3ee] text-neutral-900 ${inter.className}`}>{children}</div>
 
            <Footer />

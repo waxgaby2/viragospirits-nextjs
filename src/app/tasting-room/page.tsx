@@ -4,7 +4,7 @@ export default function Page() {
   return (
     <>
      <section className="w-full bg-[#f7f3ee] text-neutral-900 px-6 py-24">
-  <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-12 items-center">
+  <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-12 items-center">
 
     <div className="space-y-6">
 

@@ -30,7 +30,7 @@ return (<section className="bg-[#f5f1ea] text-neutral-900">
     </div>
   </div>
 
-  <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-2 lg:items-center">
+  <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 md:grid-cols-2 md:items-center">
     <div>
       <p className="mb-3 text-sm uppercase tracking-[0.3em] text-neutral-500">
         Distilling

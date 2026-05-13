@@ -3,10 +3,8 @@ export default function Page(){
         <section className="w-full bg-[#f7f3ee] text-neutral-900 px-6 py-24">
   <div className="mx-auto max-w-6xl space-y-16">
 
-    {/* Hero */}
-    <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
 
-      {/* Left */}
       <div className="space-y-6">
 
         <p className="uppercase tracking-[0.25em] text-xs text-neutral-500">
@@ -20,7 +18,7 @@ export default function Page(){
           </span>
         </h1>
 
-        <p className="text-neutral-600 leading-relaxed max-w-xl">
+        <p className="text-neutral-600 leading-relaxed ">
           Questions about the tasting room, private events, spirit availability,
           or collaborations? Reach out and the Virago team will get back to you.
         </p>
@@ -125,7 +123,7 @@ export default function Page(){
 
     <div className="rounded-3xl bg-white border border-neutral-200 shadow-sm p-8 md:p-10">
 
-      <div className="max-w-3xl space-y-8">
+      <div className=" space-y-8">
 
         <div className="space-y-3">
           <p className="uppercase tracking-[0.2em] text-xs text-neutral-500">
@@ -136,7 +134,7 @@ export default function Page(){
             Get In Touch
           </h2>
 
-          <p className="text-neutral-600 max-w-2xl">
+          <p className="text-neutral-600 ">
             Let us know how we can help — whether it’s reservations,
             wholesale inquiries, collaborations, or event bookings.
           </p>

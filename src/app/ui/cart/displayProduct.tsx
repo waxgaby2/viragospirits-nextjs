@@ -77,159 +77,509 @@ if(!cart || cart?.length<1){
 
 
   return (
-   <div
-  className={`${inter.className} relative flex w-full flex-col gap-6   lg:flex-row lg:justify-between lg:px-6 lg:pt-24`}
+  <div
+  className={`
+    ${inter.className}
+
+    relative flex w-full
+    flex-col gap-14
+
+    overflow-hidden
+
+    bg-[#f6f1ea]
+
+    px-5 pb-24 pt-10
+
+    text-[#1b1715]
+
+    md:flex-row
+    md:justify-between
+    md:px-10
+    md:pt-24
+  `}
 >
-  <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
-  <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-amber-200/5 blur-3xl" />
-
-  <div className="z-10 flex w-full flex-col gap-4 lg:w-[68%]">
-    
-    <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-5 backdrop-blur-xl">
-      <h2
-        className={`${oswald.className} text-xl tracking-wide lg:text-3xl`}
-      >
-        Your Cart ({cart?.length} item
-        {cart && cart?.length > 1 ? "s" : ""})
-      </h2>
-
-      <button
-        onClick={() => {
-          if (!cart) return;
-
-          if (cart.length > 0) {
-            setCart([]);
-            localStorage.removeItem("cart");
-            luxuryToast.success("Cart cleared");
-          }
-        }}
-        className={`${oswald.className} cursor-pointer rounded-full border border-red-400 bg-red-500/10 px-4 py-2 text-sm text-red-500 transition duration-300 hover:bg-red-500/20 lg:text-base`}
-      >
-        Clear Cart
-      </button>
-    </div>
-
-    {products.map((product: any) => (
-      <div
-        key={product._id}
-        className="group mx-3 flex flex-col gap-5 rounded-3xl border border-white/10 bg-white/10 p-4 shadow-2xl backdrop-blur-xl transition duration-500 hover:border-white/20 hover:bg-white/[0.12] lg:flex-row lg:items-center lg:justify-between"
-      >
-        <div
-          className="flex h-40 w-full items-center justify-center overflow-hidden rounded-2xl bg-white/5 lg:h-44 lg:w-[22%]"
-        >
-          <Image
-            src={urlFor(product.image).width(500).url()}
-            alt={product.name}
-            width={200}
-            height={200}
-            className="h-full object-contain transition duration-500 group-hover:scale-105"
-          />
-        </div>
-
-        <div className="flex flex-col gap-3 lg:w-[22%]">
-          <p className="text-lg font-semibold ">
-            {product.name}
-          </p>
-
-          <p className="text-sm uppercase tracking-[0.2em] ">
-            Unit Price
-          </p>
-
-          <p className="text-2xl font-bold text-red-400">
-            ${product.price}
-          </p>
-        </div>
-
-        <div className="flex flex-col items-start gap-3 lg:w-[22%] lg:items-center">
-        
-          <Quantity product={product} loading={loading} />
-        </div>
-
-        <div className="flex flex-col items-start gap-3 lg:w-[22%] lg:items-center">
-          <p className="text-sm uppercase tracking-[0.2em] ">
-            Total
-          </p>
-
-          <p className="text-2xl font-bold ">
-            ${(product.price * product.quantity).toFixed(2)}
-          </p>
-        </div>
-
-        <div className="flex justify-end lg:justify-center">
-          <Remove product={product} loading={loading} />
-        </div>
-      </div>
-    ))}
-  </div>
+ 
+  
 
   <div
-    className="z-10 mt-2 h-fit lg:sticky md:right-0 w-full rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl lg:sticky lg:top-24 lg:mt-0 lg:w-[30%]"
+    className={`
+      relative z-10
+      flex w-full
+      flex-col
+
+      lg:w-[68%]
+    `}
   >
-    <div className="border-b border-white/10 pb-5">
-      <h3
-        className={`${oswald.className} text-2xl tracking-wide `}
-      >
-        Order Summary
-      </h3>
 
-      <p className="mt-2 text-sm ">
-        Review your order before checkout
-      </p>
-    </div>
+    <div
+      className={`
+        flex flex-col gap-5
 
-    <div className="space-y-5 py-8 text-sm">
-      <div className="flex items-center justify-between ">
-        <p>
-          Subtotal ({products.length} items)
-        </p>
+        border-b border-black/10
 
-        <p className="font-semibold ">
-          $
-          {products
-            .reduce((sum, p) => p.price * p.quantity + sum, 0)
-            .toFixed(2)}
-        </p>
-      </div>
+        pb-8
 
-      <div className="flex items-center justify-between ">
-        <p>Shipping</p>
-
-        <p className="font-semibold ">$50</p>
-      </div>
-
-      <div className="flex items-center justify-between ">
-        <p>Tax</p>
-
-        <p className="font-semibold ">$10</p>
-      </div>
-    </div>
-
-    <div className="h-px w-full bg-white/10" />
-
-    <div className="my-8 flex items-center justify-between">
-      <p className="text-lg font-medium ">Total</p>
-
-      <p className="text-3xl font-bold text-red-400">
-        $
-        {(
-          products.reduce(
-            (sum, p) => p.price * p.quantity + sum,
-            0
-          ) + 60
-        ).toFixed(2)}
-      </p>
-    </div>
-
-    <Link
-      href="/cart"
-      className={`${oswald.className} flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-neutral-600 to-neutral-900 px-6 py-4 text-lg tracking-wide text-white transition duration-300 hover:scale-[1.02] hover:shadow-[0_10px_30px_rgba(255,215,0,0.25)]`}
+        lg:flex-row
+        lg:items-end
+        lg:justify-between
+      `}
     >
-      Proceed to Checkout
-    </Link>
+      <div>
+      
+        <h2
+          className={`
+            mt-3
 
-    <p className="mt-4 text-center text-xs ">
-      Secure checkout powered by encrypted payment gateways
-    </p>
+            text-4xl
+            leading-none
+
+            lg:text-6xl
+
+            ${oswald.className}
+          `}
+        >
+          Your Cart
+        </h2>
+
+        <p
+          className={`
+            mt-3
+            text-sm
+            text-black/50
+          `}
+        >
+          {cart?.length} item
+          {cart && cart?.length > 1 ? "s " : " "}
+          curated for your collection
+        </p>
+      </div>
+
+      {cart && cart.length > 0 && (
+        <button
+          onClick={() => {
+            if (!cart) return;
+
+            setCart([]);
+            localStorage.removeItem("cart");
+
+            luxuryToast.success("Cart cleared");
+          }}
+          className={`
+            h-12 w-fit
+
+            rounded-full
+
+            border border-red-300
+
+            px-5
+
+            text-xs uppercase
+            tracking-[0.3em]
+
+            text-red-500
+
+            transition duration-300
+
+            hover:bg-red-500
+            hover:text-white
+          `}
+        >
+          Clear Cart
+        </button>
+      )}
+    </div>
+
+    <div className="mt-4">
+      {products.map((product: any) => (
+        <div
+          key={product._id}
+          className={`
+            group relative
+
+            flex flex-col gap-6
+
+            border-b border-black/10
+
+            py-8 md:px-5
+            transition duration-500
+
+            lg:flex-row
+            lg:items-center
+          `}
+        >
+          <div
+            className={`
+              flex items-center
+              justify-center
+            `}
+          >
+            <div
+              className={`
+                flex h-40 w-40
+                items-center justify-center
+
+                rounded-[2rem]
+
+                bg-[#ede6de]
+
+                transition duration-500
+
+                group-hover:scale-[1.02]
+              `}
+            >
+              <Image
+                src={urlFor(product.image).width(500).url()}
+                alt={product.name}
+                width={150}
+                height={150}
+                className={`
+                  h-full w-full
+                  object-contain
+
+                  transition duration-700
+                  group-hover:scale-105
+                `}
+              />
+            </div>
+          </div>
+
+          <div
+            className={`
+              flex flex-1
+              flex-col gap-6
+
+              lg:flex-row
+              lg:items-center
+              lg:justify-between
+              lg:px-8
+            `}
+          >
+            <div className="max-w-sm">
+              <p
+                className={`
+                  text-2xl leading-tight
+
+                  lg:text-3xl
+                  ${oswald.className}
+                `}
+              >
+                {product.name}
+              </p>
+
+              <div
+                className={`
+                  mt-4 flex
+                  items-center gap-3
+                `}
+              >
+                <span
+                  className={`
+                    text-[10px]
+                    uppercase
+                    tracking-[0.3em]
+                    text-black/40
+                  `}
+                >
+                  Unit Price
+                </span>
+
+                <div
+                  className={`
+                    h-[1px] w-10
+                    bg-black/10
+                  `}
+                />
+
+                <p
+                  className={`
+                    text-lg text-red-900
+                  `}
+                >
+                  ${product.price}
+                </p>
+              </div>
+            </div>
+
+            {/* QUANTITY */}
+            <div
+              className={`
+                flex flex-col gap-3
+              `}
+            >
+              <p
+                className={`
+                  text-[10px]
+                  uppercase
+                  tracking-[0.3em]
+                  text-black/40
+                `}
+              >
+                Quantity
+              </p>
+
+              <Quantity
+                product={product}
+                loading={loading}
+              />
+            </div>
+
+            {/* TOTAL */}
+            <div
+              className={`
+                flex flex-col gap-3
+              `}
+            >
+              <p
+                className={`
+                  text-[10px]
+                  uppercase
+                  tracking-[0.3em]
+                  text-black/40
+                `}
+              >
+                Total
+              </p>
+
+              <p
+                className={`
+                  text-3xl
+
+                  ${oswald.className}
+                `}
+              >
+                $
+                {(product.price * product.quantity).toFixed(
+                  2
+                )}
+              </p>
+            </div>
+
+            {/* REMOVE */}
+            <div
+              className={`
+                flex justify-start
+                lg:justify-end
+              `}
+            >
+              <Remove
+                product={product}
+                loading={loading}
+              />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* SUMMARY */}
+  <div
+    className={`
+      relative z-10
+
+      h-fit w-full
+
+      rounded-[2.5rem]
+
+      border border-black/10
+
+      bg-[#efe7de]
+
+      p-7
+
+      md:sticky
+      right-0
+      lg:w-[30%]
+    `}
+  >
+   
+
+    <div className="relative z-10">
+      {/* HEADER */}
+      <div className="border-b border-black/10 pb-6">
+        <p
+          className={`
+            text-[10px]
+            uppercase tracking-[0.45em]
+            text-red-900
+          `}
+        >
+          Summary
+        </p>
+
+        <h3
+          className={`
+            mt-3
+            text-3xl
+
+            ${oswald.className}
+          `}
+        >
+          Order Overview
+        </h3>
+
+        <p
+          className={`
+            mt-3
+            text-sm leading-7
+            text-black/50
+          `}
+        >
+          Review your order before proceeding to
+          checkout.
+        </p>
+      </div>
+
+      {/* SUMMARY DETAILS */}
+      <div
+        className={`
+          space-y-6
+          py-8
+        `}
+      >
+        <div
+          className={`
+            flex items-center
+            justify-between
+          `}
+        >
+          <p className="text-black/50">
+            Subtotal ({products.length} items)
+          </p>
+
+          <p className="text-lg">
+            $
+            {products
+              .reduce(
+                (sum, p) =>
+                  p.price * p.quantity + sum,
+                0
+              )
+              .toFixed(2)}
+          </p>
+        </div>
+
+        <div
+          className={`
+            flex items-center
+            justify-between
+          `}
+        >
+          <p className="text-black/50">
+            Shipping
+          </p>
+
+          <p className="text-lg">$50</p>
+        </div>
+
+        <div
+          className={`
+            flex items-center
+            justify-between
+          `}
+        >
+          <p className="text-black/50">
+            Tax
+          </p>
+
+          <p className="text-lg">$10</p>
+        </div>
+      </div>
+
+      {/* TOTAL */}
+      <div
+        className={`
+          border-t border-black/10
+          py-8
+        `}
+      >
+        <div
+          className={`
+            flex items-end
+            justify-between
+          `}
+        >
+          <div>
+            <p
+              className={`
+                text-[10px]
+                uppercase
+                tracking-[0.35em]
+                text-black/40
+              `}
+            >
+              Total
+            </p>
+
+            <p
+              className={`
+                mt-3
+                text-sm
+                text-black/45
+              `}
+            >
+              Includes shipping & taxes
+            </p>
+          </div>
+
+          <p
+            className={`
+              text-5xl
+              
+
+              ${oswald.className}
+            `}
+          >
+            $
+            {(
+              products.reduce(
+                (sum, p) =>
+                  p.price * p.quantity + sum,
+                0
+              ) + 60
+            ).toFixed(2)}
+          </p>
+        </div>
+      </div>
+
+      {/* BUTTON */}
+      <Link
+        href="/checkout"
+        className={`
+          flex h-16 w-full
+          items-center justify-center
+
+          rounded-full
+
+          bg-[#1b1715]
+
+          text-sm uppercase
+          tracking-[0.20em]
+
+          text-white
+
+          transition duration-500
+
+          hover:bg-[#9f6a43]
+
+          active:scale-[0.98]
+        `}
+      >
+        Proceed To Checkout
+      </Link>
+
+      <p
+        className={`
+          mt-5
+          text-center text-xs
+          leading-6
+          text-black/40
+        `}
+      >
+        Secure checkout powered by encrypted payment
+        gateways.
+      </p>
+    </div>
   </div>
 </div>);
 }
@@ -294,162 +644,296 @@ useEffect(() => {
       document.body.style.overflow = 'auto'
     }
   }, [open])
+  return (
+<>
+  {open && (
+    <div
+      onClick={() => setOpen(false)}
+      className={`
+        fixed inset-0 z-[100]
+        bg-black/60
+        backdrop-blur-[3px]
+        transition-all duration-500
+        ${open ? "opacity-100 visible" : "opacity-0 invisible"}
+      `}
+    />
+  )}
+  <div
+    className={`
+      fixed top-0 z-[102]
+      h-screen w-[88%]
+      overflow-y-auto
 
-return (
-  <>
-    {open && (
-      <div
-        onClick={() => setOpen(!open)}
-        className={`
-          fixed inset-0 z-[100]
-          bg-black/30 backdrop-blur-sm
-          transition-all duration-500 ease-in-out
-          ${open ? "visible opacity-100" : "invisible opacity-0"}
-        `}
-      />
-    )}
+      bg-[#161311]
+      text-[#f5eee6]
+
+      shadow-[-20px_0_80px_rgba(0,0,0,0.6)]
+
+      transition-all duration-500 ease-out
+overflow-x-hidden
+      lg:w-[520px]
+
+      ${
+        open
+          ? "right-0 opacity-100"
+          : "right-[-1000px] opacity-0"
+      }
+    `}
+  >
+    <div
+      className={`
+        absolute left-[-20%] top-[10%]
+        h-[350px] w-[350px]
+        rounded-full
+        bg-red-900/20
+        blur-3xl
+      `}
+    />
 
     <div
       className={`
-        fixed top-0 z-[102]
-        h-screen w-[85%] overflow-auto
-        
-        bg-white text-black
-        shadow-[-10px_0_40px_rgba(0,0,0,0.2)]
-        backdrop-blur-xl
-        pb-30 transition-all duration-200 ease-in-out
-        lg:w-[500px] lg:pb-5
-        ${open ? "right-0 opacity-100" : "right-[-1000px] opacity-0"}
+        absolute bottom-[10%] right-[-10%]
+        h-[250px] w-[250px]
+        rounded-full
+        bg-amber-700/10
+        blur-3xl
       `}
-    >
-    
+    />
+
+    <div
+      className={`
+        pointer-events-none
+        absolute inset-0
+        opacity-[0.04]
+        mix-blend-soft-light
+        bg-[url('/noise.png')]
+      `}
+    />
+
+    <div className="relative z-10">
+     
       <div
-        className={` sticky top-0 z-20
-          border-b border-black/10
-          px-4 py-5
-          backdrop-blur-lg 
+        className={`
+          sticky top-0 z-20
+          border-b border-white/10
+          bg-[#161311]/90
+          px-5 py-6
+          backdrop-blur-xl
         `}
-         
       >
         <div className="flex items-center justify-between">
-          <h2
-            className={`
-              text-lg tracking-wide 
-              lg:text-3xl
-              ${oswald.className}
-            `}
-          >
-            Your Cart ({cart?.length} item
-            {cart && cart?.length > 1 ? "s" : ""})
-          </h2>
-
-          {cart && cart.length > 0 && (
-            <button
-              onClick={() => {
-                if (!cart) return;
-
-                if (cart.length > 0) {
-                  setCart([]);
-                  localStorage.removeItem("cart");
-                  luxuryToast.success("Cart cleared");
-                }
-              }}
+          <div>
+            <p
               className={`
-                cursor-pointer 
-                tracking-wide rounded-xl
-                transition duration-300
-                hover:text-red-500
-                lg:text-lg
-                 border border-red-400
-                  bg-red-500/10 px-4 py-2 
-                  text-sm text-red-500
+                text-[10px]
+                uppercase tracking-[0.4em]
+                text-[#c17b47]
+              `}
+            >
+              Virago Spirits
+            </p>
+
+            <h2
+              className={`
+                mt-2
+                text-2xl
+                tracking-[0.08em]
+
+                lg:text-4xl
                 ${oswald.className}
               `}
             >
-              Clear Cart
-            </button>
-          )}
+              Your Cart
+            </h2>
+
+            <p className="mt-1 text-sm text-white/40">
+              {cart?.length} item
+              {cart && cart?.length > 1 ? "s" : ""}
+            </p>
+          </div>
+
+          <button
+            onClick={() => setOpen(false)}
+            className={`
+              flex h-11 w-11
+              items-center justify-center
+              rounded-full
+              border border-white/10
+
+              text-2xl  text-white/60
+
+              transition duration-300
+              hover:border-[#c17b47]
+              hover:text-[#c17b47]
+            `}
+          >
+            ✕
+          </button>
         </div>
+
+        {cart && cart.length > 0 && (
+          <button
+            onClick={() => {
+              if (!cart) return;
+
+              setCart([]);
+              localStorage.removeItem("cart");
+
+              luxuryToast.success("Cart cleared");
+            }}
+            className={`
+              mt-5
+              text-xs uppercase
+              tracking-[0.3em]
+
+              text-red-400
+
+              transition duration-300
+              hover:text-red-300
+            `}
+          >
+            Clear Cart
+          </button>
+        )}
       </div>
 
-      <div className="mt-2 px-2 lg:px-3">
+      {products.length < 1 && (
+        <div
+          className={`
+            flex min-h-[60vh]
+            flex-col items-center
+            justify-center
+            px-8 text-center
+          `}
+        >
+          <p
+            className={`
+              text-[10px]
+              uppercase tracking-[0.5em]
+              text-[#c17b47]
+            `}
+          >
+            Your Collection Awaits
+          </p>
+
+          <h3
+            className={`
+              mt-5
+              text-4xl
+              leading-tight
+              ${oswald.className}
+            `}
+          >
+            Cart Is Empty
+          </h3>
+
+          <p
+            className={`
+              mt-5
+              max-w-sm
+              text-sm leading-8
+              text-white/50
+            `}
+          >
+            Add bottles to begin curating your premium
+            spirits collection.
+          </p>
+        </div>
+      )}
+
+      <div className="px-5 pt-4">
         {products.map((product: any, i) => {
           return (
             <div
               key={product._id}
               className={`
-                mb-3 flex min-h-[120px]
-                items-center rounded-2xl
-                border border-black/10
-                bg-white
-                px-3 py-3
-                shadow-[0_5px_20px_rgba(0,0,0,0.08)]
-                backdrop-blur-sm
+                flex min-h-[145px]
+                items-center
+                border-b border-white/10
+                py-5
+
                 transition-all duration-500
-               
-                ${open
-                  ? "translate-x-0 opacity-100"
-                  : "translate-x-5 opacity-0"}
+
+                ${
+                  open
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-6 opacity-0"
+                }
               `}
               style={{
-                transitionDelay: `${i * 110}ms`,
+                transitionDelay: `${i * 120}ms`,
               }}
             >
+            
               <div
-                className="
-                  flex h-full w-[22%]
+                className={`
+                  flex w-[28%]
                   items-center justify-center
-                "
+                `}
               >
                 <div
-                  className="
-                    rounded-xl bg-white p-2
-                    shadow-sm
-                  "
+                  className={`
+                    rounded-[1.5rem]
+                    border border-white/5
+                    bg-[#211c19]
+                    p-3
+                  `}
                 >
                   <Image
                     src={urlFor(product.image).width(300).url()}
-                    width={65}
+                    width={75}
+                    height={75}
                     alt={product.name}
-                    height={65}
                     className="object-contain"
                   />
                 </div>
               </div>
 
+              {/* INFO */}
               <div
-                className="
-                  flex w-[48%]
+                className={`
+                  flex w-[47%]
                   flex-col justify-center
-                  px-2
-                "
+                  px-3
+                `}
               >
                 <p
                   className={`
-                    text-sm leading-6 text-black
-                    lg:text-base
+                    text-base leading-7
+                    text-[#f5eee6]
+
+                    lg:text-lg
                     ${oswald.className}
                   `}
                 >
                   {product.name}
                 </p>
 
-                <p className="mt-1 text-xs text-black/50">
-                  Quantity: {product.quantity}
+                <p
+                  className={`
+                    mt-2
+                    text-xs uppercase
+                    tracking-[0.25em]
+                    text-white/35
+                  `}
+                >
+                  Quantity · {product.quantity}
                 </p>
               </div>
 
+              {/* ACTIONS */}
               <div
-                className="
-                  flex w-[30%]
+                className={`
+                  flex w-[25%]
                   flex-col items-end
-                  justify-between gap-3
-                "
+                  justify-between gap-5
+                `}
               >
                 <p
                   className={`
-                    text-sm text-red-500
-                    lg:text-base
+                    text-lg
+                    text-[#c17b47]
+
                     ${oswald.className}
                   `}
                 >
@@ -457,56 +941,91 @@ return (
                   {(product.price * product.quantity).toFixed(2)}
                 </p>
 
-                <Remove product={product} loading={loading} />
+                <Remove
+                  product={product}
+                  loading={loading}
+                />
               </div>
             </div>
           );
         })}
       </div>
 
-      <div
-        className={`
-          mt-8 border-t border-black/10
-          px-5 pt-6
-          ${oswald.className}
-        `}
-      >
-        <div className="flex items-center justify-between text-lg lg:text-2xl">
-          <p className="text-black/60">Total</p>
-
-          <p className="text-black">
-            $
-            {(
-              products.reduce(
-                (sum, p) => p.price * p.quantity + sum,
-                0
-              )
-            ).toFixed(2)}
-          </p>
-        </div>
-      </div>
-
-    
-      {cart && cart.length > 0 && (
-        <div className="mt-10 flex items-center justify-center px-5">
-          <Link
-            href="/cart"
-            className="
-              w-full rounded-full
-              bg-black px-8 py-4
-              text-center text-sm
-              font-semibold uppercase
-              tracking-[0.25em] text-white
-              transition duration-300
-              hover:bg-red-800
-              active:scale-95
-            "
+      {products.length > 0 && (
+        <>
+          <div
+            className={`
+              mt-6
+              px-5 pt-6
+            `}
           >
-            Proceed To Cart
-          </Link>
-        </div>
+            <div
+              className={`
+                flex items-center
+                justify-between
+              `}
+            >
+              <p
+                className={`
+                  text-sm uppercase
+                  tracking-[0.3em]
+                  text-white/40
+                `}
+              >
+                Total
+              </p>
+
+              <p
+                className={`
+                  text-3xl
+                  text-[#f5eee6]
+
+                  ${oswald.className}
+                `}
+              >
+                $
+                {(
+                  products.reduce(
+                    (sum, p) =>
+                      p.price * p.quantity + sum,
+                    0
+                  )
+                ).toFixed(2)}
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10 px-5 pb-10">
+            <Link
+              href="/cart"
+              className={`
+                flex h-16 w-full
+                items-center justify-center
+
+                rounded-full
+
+                border border-[#c17b47]
+                bg-[#201815]
+
+                text-sm uppercase
+                tracking-[0.35em]
+
+                text-[#f5eee6]
+
+                transition duration-500
+
+                hover:bg-[#c17b47]
+                hover:text-black
+
+                active:scale-[0.98]
+              `}
+            >
+              Proceed To Cart
+            </Link>
+          </div>
+        </>
       )}
     </div>
-  </>
-);
+  </div>
+</>);
 }

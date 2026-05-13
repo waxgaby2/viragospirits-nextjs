@@ -121,7 +121,8 @@ return (<section
         >
           <div
             className="
-              relative flex h-[320px]
+              relative flex h-[150px]
+md:h-[320px]
               items-end justify-center
               overflow-hidden rounded-[1.5rem]
               bg-gradient-to-br
@@ -144,11 +145,11 @@ return (<section
               height={600}
               alt={product.name}
               className="
-                relative z-10 h-56
-                w-auto object-contain
+                relative z-10 h-30
+                w-auto object-cover
                 transition duration-700
                 group-hover:scale-105
-                lg:h-72
+                md:h-72
               "
             />
           </div>

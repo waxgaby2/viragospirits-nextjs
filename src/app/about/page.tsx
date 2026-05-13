@@ -56,9 +56,9 @@ export default function Page(){
       </h2>
     </div>
 
-    <div className="lg:grid gap-10 w-full lg:grid-cols-3 flex flex-col justify-center items-center">
+    <div className="lg:grid gap-10 lg:gap-5 w-full lg:grid-cols-3 flex flex-col justify-center items-center">
      
-      <div className="group w-[90%] md:w-100 overflow-hidden rounded-[2rem] bg-white shadow-xl transition duration-500 hover:-translate-y-2">
+      <div className="group w-[90%] md:w-150 lg:w-full overflow-hidden rounded-[2rem] bg-white shadow-xl transition duration-500 hover:-translate-y-2">
         <div className="overflow-hidden">
           <Image
             src="/images/founders/barry.webp"
@@ -98,14 +98,14 @@ export default function Page(){
         </div>
       </div>
 
-      <div className="group w-[90%] md:w-100 overflow-hidden rounded-[2rem] bg-white shadow-xl transition duration-500 hover:-translate-y-2">
+      <div className="group w-[90%] md:w-150 lg:w-full overflow-hidden rounded-[2rem] bg-white shadow-xl transition duration-500 hover:-translate-y-2">
         <div className="overflow-hidden">
           <Image
             src="/images/founders/vicki.webp"
             alt="Vicki Haneberg"
             width={500}
             height={700}
-            className="h-[450px]  w-full md:w-100 object-cover transition duration-700 group-hover:scale-105"
+            className="h-[450px]  w-full object-cover transition duration-700 group-hover:scale-105"
           />
         </div>
 
@@ -138,7 +138,7 @@ export default function Page(){
         </div>
       </div>
 
-      <div className="group w-[90%] md:w-100 overflow-hidden rounded-[2rem] bg-white shadow-xl transition duration-500 hover:-translate-y-2">
+      <div className="group w-[90%] md:w-150 lg:w-full overflow-hidden rounded-[2rem] bg-white shadow-xl transition duration-500 hover:-translate-y-2">
         <div className="overflow-hidden">
           <Image
             src="/images/founders/brad.webp"
