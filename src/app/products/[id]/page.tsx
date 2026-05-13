@@ -148,7 +148,7 @@ console.log(product)
           className="relative flex flex-col justify-center"
         >
           <p
-            className="text-[10px]uppercase tracking-[0.5em] text-neutral-500"
+            className="text-[10px]uppercase md:tracking-[0.5em] tracking-[0.2em] text-neutral-500"
           >
             Virago Spirits Collection
           </p>
@@ -157,11 +157,11 @@ console.log(product)
             className={`mt-5
               
               font-serif
-              text-5xl
+              text-4xl
               leading-none
               tracking-tight
 
-              sm:text-6xl
+              md:text-6xl
               lg:text-7xl`}
           >
             {product.name}
@@ -191,11 +191,11 @@ console.log(product)
 
               <p
                 className={`mt-2
-                  text-5xl
+                  text-4xl
                   font-semibold
                   text-red-900
 
-                  lg:text-6xl`}
+                  md:text-6xl`}
               >
                 ${product.price}
               </p>

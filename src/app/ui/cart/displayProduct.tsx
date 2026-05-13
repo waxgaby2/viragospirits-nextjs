@@ -542,7 +542,7 @@ if(!cart || cart?.length<1){
         </div>
       </div>
 
-      {/* BUTTON */}
+    
       <Link
         href="/checkout"
         className={`
@@ -560,7 +560,7 @@ if(!cart || cart?.length<1){
 
           transition duration-500
 
-          hover:bg-[#9f6a43]
+          hover:bg-red-800/90
 
           active:scale-[0.98]
         `}
@@ -727,7 +727,7 @@ overflow-x-hidden
               className={`
                 text-[10px]
                 uppercase tracking-[0.4em]
-                text-[#c17b47]
+                text-white
               `}
             >
               Virago Spirits
@@ -763,8 +763,8 @@ overflow-x-hidden
               text-2xl  text-white/60
 
               transition duration-300
-              hover:border-[#c17b47]
-              hover:text-[#c17b47]
+              hover:border-white
+              hover:text-white
             `}
           >
             ✕
@@ -810,7 +810,7 @@ overflow-x-hidden
             className={`
               text-[10px]
               uppercase tracking-[0.5em]
-              text-[#c17b47]
+              text-white
             `}
           >
             Your Collection Awaits
@@ -932,7 +932,7 @@ overflow-x-hidden
                 <p
                   className={`
                     text-lg
-                    text-[#c17b47]
+                    text-white
 
                     ${oswald.className}
                   `}
@@ -1004,7 +1004,7 @@ overflow-x-hidden
 
                 rounded-full
 
-                border border-[#c17b47]
+                border border-white
                 bg-[#201815]
 
                 text-sm uppercase
@@ -1014,7 +1014,7 @@ overflow-x-hidden
 
                 transition duration-500
 
-                hover:bg-[#c17b47]
+                hover:bg-white
                 hover:text-black
 
                 active:scale-[0.98]
