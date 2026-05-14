@@ -8,13 +8,15 @@ import { oswald } from "../ui/fonts"
 
 export default function Page(){
     return (
-        <div>
+        <div className="my-20"> 
         
            <ProductsHero />
-           <h2 id="spirits" className={`font-serif text-2xl 
-           text-neutral-900 text-center pt-10
-           lg:text-3xl mt-10 tracking-wider
-           ml-4 lg:ml-10`}>Our Spirits</h2>
+           <h2 id="spirits" className={` text-3xl 
+            text-center pt-10
+           lg:text-3xl mt-10 
+           ml-4 lg:ml-10 text-neutral-500
+           text-[10px] uppercase md:tracking-[0.5em]
+            tracking-[0.2em]"`}>Virago Spirits Collections</h2>
              <Suspense       
         fallback={<div className={`text-red-600 flex flex-col
          flex-wrap pb-5 pt-15 md:grid md:grid-cols-2 lg:grid-cols-3 gap-10
