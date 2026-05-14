@@ -16,7 +16,7 @@ export function Footer(){
     <div className="absolute bottom-0 right-[-10%] h-72 w-72 rounded-full bg-neutral-700 blur-3xl"></div>
   </div>
 
-  <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-16 lg:flex-row lg:justify-between">
+  <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-16 md:flex-row md:justify-between">
     
     <div className={`flex flex-col gap-10 lg:w-[45%] ${workSans.className}`}>
       

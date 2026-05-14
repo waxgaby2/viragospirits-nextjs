@@ -8,6 +8,8 @@ import { OurSpirits } from "./ui/ourSpirits";
 import { VisitUs } from "./ui/visitUsHome";
 import { StayInLoop } from "./ui/newsletter";
 import {Footer} from "./ui/footer";
+import { Suspense } from "react";
+import SpiritsLoading from "./ui/ourSpiritsSkeleton";
 export default function Home() {
   return (
     <div className="flex flex-col bg-white text-white">
@@ -16,7 +18,9 @@ export default function Home() {
      <AfterHero />
      <Tear />
      <Story />
-     <OurSpirits />
+      <Suspense fallback={<SpiritsLoading />}>
+      <OurSpirits />
+    </Suspense>
      <VisitUs />
      <StayInLoop /> 
    <Footer />
